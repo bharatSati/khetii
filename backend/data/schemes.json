@@ -1,0 +1,344 @@
+[
+  {
+    "id": "pm-kisan",
+    "name": {
+      "en": "PM Kisan Samman Nidhi (PM-KISAN)",
+      "hi": "प्रधानमंत्री किसान सम्मान निधि (पीएम-किसान)"
+    },
+    "category": "Income Support",
+    "level": "Central",
+    "shortDescription": {
+      "en": "Direct income support of ₹6,000 per year in three equal instalments to eligible landholding farmer families.",
+      "hi": "पात्र किसान परिवारों को प्रति वर्ष ₹6,000 की प्रत्यक्ष आय सहायता तीन समान किस्तों में प्रदान की जाती है।"
+    },
+    "description": {
+      "en": "Pradhan Mantri Kisan Samman Nidhi is a central sector scheme launched by the Government of India to supplement the financial needs of landholding farmers' families in procuring various inputs related to agriculture and allied activities as well as domestic needs.",
+      "hi": "प्रधानमंत्री किसान सम्मान निधि भारत सरकार की एक केंद्रीय क्षेत्र योजना है, जिसका उद्देश्य भूमिधारक किसान परिवारों को कृषि और संबद्ध गतिविधियों के लिए आवश्यक इनपुट तथा घरेलू जरूरतों को पूरा करने हेतु वित्तीय सहायता प्रदान करना है।"
+    },
+    "benefits": {
+      "en": "Financial benefit of ₹6,000 per year transferred directly into the bank accounts of farmer families in three four-monthly instalments of ₹2,000 each.",
+      "hi": "प्रति वर्ष ₹6,000 की वित्तीय सहायता ₹2,000 की तीन चार-मासिक किस्तों में सीधे किसानों के बैंक खातों में डीबीटी के माध्यम से भेजी जाती है।"
+    },
+    "eligibility": {
+      "en": "All landholding farmer families having cultivable landholding in their names. Institutional landholders, serving/retired government employees, professionals, and taxpayers are excluded.",
+      "hi": "सभी भूमिधारक किसान परिवार जिनके नाम पर खेती योग्य भूमि दर्ज है। संस्थागत भूमिधारक, सरकारी कर्मचारी, पेशेवर तथा आयकरदाता इस योजना के दायरे से बाहर हैं।"
+    },
+    "documentsRequired": {
+      "en": ["Aadhaar card", "Proof of citizenship", "Land ownership documents (Khatauni/Khasra)", "Active bank account details linked with Aadhaar"],
+      "hi": ["आधार कार्ड", "नागरिकता का प्रमाण", "भूमि स्वामित्व दस्तावेज (खतौनी/खसरा)", "आधार से लिंक सक्रिय बैंक खाता विवरण"]
+    },
+    "howToApply": {
+      "en": "Register online via the PM-KISAN portal (pmkisan.gov.in) under 'Farmers Corner', or visit your nearest Common Service Centre (CSC) or local agriculture office.",
+      "hi": "पीएम-किसान पोर्टल (pmkisan.gov.in) के 'फार्मर्स कॉर्नर' पर ऑनलाइन पंजीकरण करें, या निकटतम जन सेवा केंद्र (CSC) अथवा कृषि कार्यालय में संपर्क करें।"
+    },
+    "officialLink": "https://pmkisan.gov.in",
+    "notes": {
+      "en": "e-KYC and land seeding are mandatory to receive ongoing instalments. Check the official website for the latest rules.",
+      "hi": "किस्त प्राप्त करने के लिए ई-केवाईसी और लैंड सीडिंग अनिवार्य है। नवीनतम नियमों के लिए आधिकारिक पोर्टल देखें।"
+    }
+  },
+  {
+    "id": "pmfby",
+    "name": {
+      "en": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+      "hi": "प्रधानमंत्री फसल बीमा योजना (पीएमएफबीवाई)"
+    },
+    "category": "Crop Insurance",
+    "level": "Central",
+    "shortDescription": {
+      "en": "Comprehensive risk insurance coverage against yield loss and post-harvest damage due to non-preventable natural risks.",
+      "hi": "अपरिहार्य प्राकृतिक आपदाओं से उपज के नुकसान और कटाई के बाद के नुकसान से सुरक्षा हेतु व्यापक फसल बीमा कवर।"
+    },
+    "description": {
+      "en": "PMFBY provides comprehensive insurance coverage against crop failure due to drought, flood, pests, unseasonal rain, and localized calamities, thus helping stabilize farmer income and encouraging adoption of innovative practices.",
+      "hi": "पीएमएफबीवाई सूखे, बाढ़, कीट, बेमौसम बारिश और स्थानीय आपदाओं से फसल खराब होने पर व्यापक बीमा सुरक्षा प्रदान करती है, जिससे किसानों की आय स्थिर होती है।"
+    },
+    "benefits": {
+      "en": "Farmer pays minimal premium: 2% for Kharif food and oilseed crops, 1.5% for Rabi crops, and 5% for commercial/horticultural crops. Balance premium is subsidized by State and Central Governments.",
+      "hi": "किसान को अत्यंत कम प्रीमियम देना होता है: खरीफ फसलों के लिए 2%, रबी फसलों के लिए 1.5% और वाणिज्यिक/बागवानी फसलों के लिए 5%। शेष प्रीमियम सरकार वहन करती है।"
+    },
+    "eligibility": {
+      "en": "All farmers including sharecroppers and tenant farmers growing notified crops in notified areas. Available for both loanee and non-loanee farmers.",
+      "hi": "अधिसूचित क्षेत्रों में अधिसूचित फसलें उगाने वाले सभी किसान, जिनमें बंटाईदार और काश्तकार किसान भी शामिल हैं। ऋणी और गैर-ऋणी दोनों किसानों के लिए उपलब्ध।"
+    },
+    "documentsRequired": {
+      "en": ["Land record documents (Khasra/Khatauni)", "Sowing certificate/declaration", "Identity proof (Aadhaar)", "Bank passbook copy"],
+      "hi": ["भूमि अभिलेख (खसरा/खतौनी)", "बुआई प्रमाण पत्र / स्व-घोषणा", "पहचान पत्र (आधार)", "बैंक पासबुक की प्रति"]
+    },
+    "howToApply": {
+      "en": "Apply through the National Crop Insurance Portal (pmfby.gov.in), authorized bank branch, CSC, or registered insurance company representative before the seasonal cut-off date.",
+      "hi": "कट-ऑफ तिथि से पूर्व राष्ट्रीय फसल बीमा पोर्टल (pmfby.gov.in), बैंक शाखा, सीएससी अथवा पंजीकृत बीमा प्रतिनिधि के माध्यम से आवेदन करें।"
+    },
+    "officialLink": "https://pmfby.gov.in",
+    "notes": {
+      "en": "In case of localized disaster or post-harvest loss, intimation must be provided within 72 hours via the Crop Insurance App or toll-free helpline.",
+      "hi": "स्थानीय आपदा या कटाई उपरांत क्षति की स्थिति में 72 घंटे के भीतर फसल बीमा ऐप या टोल-फ्री नंबर पर सूचना देना अनिवार्य है।"
+    }
+  },
+  {
+    "id": "kcc",
+    "name": {
+      "en": "Kisan Credit Card (KCC)",
+      "hi": "किसान क्रेडिट कार्ड (केसीसी)"
+    },
+    "category": "Credit & Finance",
+    "level": "Central",
+    "shortDescription": {
+      "en": "Adequate and timely credit support from the banking system with an interest subvention benefit down to 4% effective interest.",
+      "hi": "ब्याज छूट के साथ केवल 4% प्रभावी वार्षिक ब्याज दर पर किसानों को समय पर पर्याप्त ऋण सुविधा।"
+    },
+    "description": {
+      "en": "The Kisan Credit Card scheme aims to meet the comprehensive credit requirements of the agriculture sector by giving financial support to farmers for cultivation expenses, post-harvest costs, and maintenance of farm assets.",
+      "hi": "किसान क्रेडिट कार्ड योजना का उद्देश्य किसानों को खेती की लागत, कटाई के बाद के खर्च और कृषि उपकरणों के रखरखाव के लिए समय पर संस्थागत ऋण उपलब्ध कराना है।"
+    },
+    "benefits": {
+      "en": "Short-term crop loans up to ₹3,00,000 at a subsidized interest rate of 7%, which drops to 4% per annum upon prompt and timely repayment.",
+      "hi": "₹3,00,000 तक का अल्पकालिक ऋण 7% की रियायती ब्याज दर पर, जो समय पर भुगतान करने पर 4% वार्षिक रह जाता है।"
+    },
+    "eligibility": {
+      "en": "Individual/joint agricultural landholders, tenant farmers, sharecroppers, self-help groups (SHGs), and farmers engaged in animal husbandry and fisheries.",
+      "hi": "व्यक्तिगत/संयुक्त भूमि मालिक, काश्तकार, बंटाईदार, स्वयं सहायता समूह (एसएचजी), तथा पशुपालन और मत्स्य पालन करने वाले किसान।"
+    },
+    "documentsRequired": {
+      "en": ["Application form", "Aadhaar / Voter ID", "Land ownership / cultivation documents", "Passport size photograph"],
+      "hi": ["आवेदन पत्र", "आधार कार्ड / वोटर आईडी", "भूमि स्वामित्व / जुताई दस्तावेज", "पासपोर्ट साइज फोटो"]
+    },
+    "howToApply": {
+      "en": "Visit any commercial bank, cooperative bank, Regional Rural Bank (RRB), or apply online via bank portals and PM-KISAN portal.",
+      "hi": "किसी भी वाणिज्यिक बैंक, सहकारी बैंक, क्षेत्रीय ग्रामीण बैंक में जाएं अथवा ऑनलाइन बैंकिंग पोर्टल के माध्यम से आवेदन करें।"
+    },
+    "officialLink": "https://myscheme.gov.in/schemes/kcc",
+    "notes": {
+      "en": "Collateral-free loan limit is up to ₹1.6 lakh (enhanced to ₹2 lakh in select tie-up arrangements). Check with your lending branch.",
+      "hi": "बिना गारंटी ऋण की सीमा ₹1.6 लाख तक है। विस्तृत नियमों के लिए अपनी बैंक शाखा से संपर्क करें।"
+    }
+  },
+  {
+    "id": "soil-health-card",
+    "name": {
+      "en": "Soil Health Card Scheme",
+      "hi": "मृदा स्वास्थ्य कार्ड योजना"
+    },
+    "category": "Soil & Inputs",
+    "level": "Central",
+    "shortDescription": {
+      "en": "Free soil nutrient testing and customized fertilizer recommendations to improve soil health and crop yields.",
+      "hi": "मिट्टी की उर्वरता जांच और संतुलित खाद-उर्वरक उपयोग की वैज्ञानिक सलाह का निशुल्क कार्ड।"
+    },
+    "description": {
+      "en": "Soil Health Card scheme provides farmers with soil nutrient status of their holdings and advisories on dosage of fertilizers and soil amendments needed to maintain long-term soil fertility and maximize crop output.",
+      "hi": "मृदा स्वास्थ्य कार्ड योजना किसानों को उनके खेत की मिट्टी की पोषक तत्व स्थिति और आवश्यक उर्वरक मात्रा की सलाह देती है ताकि मिट्टी की गुणवत्ता और फसल पैदावार बढ़ सके।"
+    },
+    "benefits": {
+      "en": "Detailed assessment of 12 soil parameters (N, P, K, S, Zn, Fe, Cu, Mn, Bo, pH, EC, OC) along with customized dosage recommendations that reduce input wastage and save costs.",
+      "hi": "12 मुख्य पोषक तत्वों की जांच और खेत के अनुकूल उर्वरक मात्रा की सिफारिश, जिससे लागत घटती है और उपज बढ़ती है।"
+    },
+    "eligibility": {
+      "en": "All farmers holding agricultural land across India.",
+      "hi": "भारत के सभी किसान जिनके पास कृषि योग्य भूमि है।"
+    },
+    "documentsRequired": {
+      "en": ["Farmer ID / Aadhaar", "Land revenue records (Khata / Khasra number)"],
+      "hi": ["किसान पहचान पत्र / आधार कार्ड", "भूमि दस्तावेज (खसरा/खाता संख्या)"]
+    },
+    "howToApply": {
+      "en": "Soil samples are collected by agriculture department field staff. Farmers can also deposit samples at nearest Soil Testing Laboratories (STLs) or Krishi Vigyan Kendras (KVK).",
+      "hi": "कृषि विभाग के मैदानी कार्यकर्ता मिट्टी के नमूने एकत्र करते हैं। किसान निकटतम मृदा परीक्षण प्रयोगशाला या केवीके में भी नमूना जमा कर सकते हैं।"
+    },
+    "officialLink": "https://soilhealth.dac.gov.in",
+    "notes": {
+      "en": "Cards are issued periodically every 3 years. Check the national portal to track sample status.",
+      "hi": "कार्ड हर 3 साल में नवीनीकृत किए जाते हैं। अपने नमूने की स्थिति देखने के लिए पोर्टल पर जाएं।"
+    }
+  },
+  {
+    "id": "pm-kusum",
+    "name": {
+      "en": "PM-KUSUM (Pradhan Mantri Kisan Urja Suraksha evam Utthaan Mahabhiyan)",
+      "hi": "पीएम-कुसुम योजना (किसान ऊर्जा सुरक्षा एवं उत्थान महाभियान)"
+    },
+    "category": "Solar Energy & Equipment",
+    "level": "Central",
+    "shortDescription": {
+      "en": "Subsidies up to 60% for installing standalone solar agriculture pumps and solarizing grid-connected irrigation pumps.",
+      "hi": "स्टैंडअलोन सोलर पंप लगाने और मौजूदा ग्रिड पंपों के सौरीकरण के लिए 60% तक की भारी सब्सिडी।"
+    },
+    "description": {
+      "en": "PM-KUSUM enables farmers to install solar water pumps and solar power plants on barren or cultivable lands, ensuring day-time irrigation and creating additional revenue by selling surplus green power to the grid.",
+      "hi": "पीएम-कुसुम योजना किसानों को सोलर पंप लगाने और बंजर या कृषि भूमि पर सौर ऊर्जा संयंत्र स्थापित करने में सक्षम बनाती है, जिससे दिन में सिंचाई और अतिरिक्त बिजली बेचकर आमदनी होती है।"
+    },
+    "benefits": {
+      "en": "Up to 60% financial assistance (30% Central + 30% State), with 30% available as bank loan. Farmer only pays 10% upfront.",
+      "hi": "लागत का 60% तक सरकारी अनुदान (30% केंद्र + 30% राज्य), 30% बैंक ऋण और किसान को केवल 10% अंशदान देना होता है।"
+    },
+    "eligibility": {
+      "en": "Individual farmers, groups of farmers, cooperatives, Panchayats, Farmer Producer Organizations (FPOs), and Water User Associations.",
+      "hi": "व्यक्तिगत किसान, किसानों का समूह, सहकारी समितियां, पंचायतें, एफपीओ और जल उपभोक्ता संघ।"
+    },
+    "documentsRequired": {
+      "en": ["Aadhaar card", "Land ownership documents", "Bank account passbook", "Electricity connection receipt (for pump solarization)"],
+      "hi": ["आधार कार्ड", "भूमि स्वामित्व दस्तावेज", "बैंक पासबुक", "बिजली बिल/कनेक्शन रसीद (यदि ग्रिड पंप हो)"]
+    },
+    "howToApply": {
+      "en": "Apply through your respective State Renewable Energy Development Agency (e.g. UPNEDA, HAREDA, RREC) or the state solar portal.",
+      "hi": "अपने राज्य की नवीकरणीय ऊर्जा विकास एजेंसी (जैसे UPNEDA, RREC आदि) के आधिकारिक राज्य पोर्टल पर आवेदन करें।"
+    },
+    "officialLink": "https://pmkusum.mnre.gov.in",
+    "notes": {
+      "en": "Beware of fraudulent websites. Only apply through official state renewable energy portals listed on mnre.gov.in.",
+      "hi": "फर्जी वेबसाइटों से सावधान रहें। केवल आधिकारिक राज्य ऊर्जा पोर्टल से ही आवेदन करें।"
+    }
+  },
+  {
+    "id": "pmksy",
+    "name": {
+      "en": "Pradhan Mantri Krishi Sinchayee Yojana (PMKSY) - Per Drop More Crop",
+      "hi": "प्रधानमंत्री कृषि सिंचाई योजना (पीएमकेएसवाई) - प्रति बूंद अधिक फसल"
+    },
+    "category": "Irrigation",
+    "level": "Central",
+    "shortDescription": {
+      "en": "Financial subsidies up to 55% for small/marginal farmers for installing drip and sprinkler micro-irrigation systems.",
+      "hi": "ड्रिप और स्प्रिंकलर सूक्ष्म सिंचाई प्रणाली लगाने हेतु छोटे व सीमांत किसानों को 55% तक का अनुदान।"
+    },
+    "description": {
+      "en": "PMKSY promotes micro-irrigation technologies (drip and sprinkler systems) to enhance water use efficiency at the farm level, ensure 'Har Khet Ko Pani', and boost crop yields with less water and fertilizer consumption.",
+      "hi": "यह योजना खेत स्तर पर जल उपयोग दक्षता बढ़ाने, 'हर खेत को पानी' सुनिश्चित करने और ड्रिप व स्प्रिंकलर से पानी की बचत के साथ पैदावार बढ़ाने के लिए अनुदान देती है।"
+    },
+    "benefits": {
+      "en": "Financial assistance of 55% of benchmark cost for small and marginal farmers, and 45% for other farmers for micro-irrigation equipment.",
+      "hi": "लघु और सीमांत किसानों के लिए 55% तथा अन्य किसानों के लिए 45% तक उपकरण लागत सब्सिडी।"
+    },
+    "eligibility": {
+      "en": "All categories of farmers having cultivable land with an assured water source.",
+      "hi": "वे सभी किसान जिनके पास खेती योग्य भूमि तथा सुनिश्चित जल स्रोत उपलब्ध है।"
+    },
+    "documentsRequired": {
+      "en": ["Identity proof (Aadhaar)", "Land ownership documents (7/12, Khatauni)", "Bank passbook", "Electricity connection / water source proof"],
+      "hi": ["आधार कार्ड", "भूमि अभिलेख (खसरा/खतौनी)", "बैंक खाता प्रति", "जल स्रोत / बोरवेल प्रमाण"]
+    },
+    "howToApply": {
+      "en": "Register via your State Agriculture or Horticulture Department portal or contact the District Horticulture Officer (DHO).",
+      "hi": "राज्य के उद्यानिकी या कृषि विभाग पोर्टल पर ऑनलाइन आवेदन करें अथवा जिला उद्यान अधिकारी से संपर्क करें।"
+    },
+    "officialLink": "https://pmksy.gov.in",
+    "notes": {
+      "en": "Subsidies are credited directly to the beneficiary's DBT bank account or approved vendor based on state guidelines.",
+      "hi": "अनुदान राशि राज्य के नियमों अनुसार सीधे किसान के खाते अथवा अधिकृत डीलर को अंतरित की जाती है।"
+    }
+  },
+  {
+    "id": "enam",
+    "name": {
+      "en": "National Agriculture Market (e-NAM)",
+      "hi": "राष्ट्रीय कृषि बाजार (ई-नाम)"
+    },
+    "category": "Marketing & Trade",
+    "level": "Central",
+    "shortDescription": {
+      "en": "Pan-India electronic trading portal connecting existing APMC mandis to create a unified national market for agricultural commodities.",
+      "hi": "देश भर की एपीएमसी मंडियों को ऑनलाइन जोड़कर किसानों को बेहतर मूल्य और पारदर्शी ई-नीलामी मंच प्रदान करता है।"
+    },
+    "description": {
+      "en": "e-NAM is an online electronic trading platform that integrates agricultural produce markets across India. It facilitates transparent competitive bidding, quality assaying, and direct online payment to farmers' bank accounts.",
+      "hi": "ई-नाम एक ऑनलाइन ट्रेडिंग प्लेटफॉर्म है जो पूरे भारत की मंडियों को जोड़ता है। यह पारदर्शी बोली प्रक्रिया, उपज की गुणवत्ता जांच और सीधे बैंक खाते में भुगतान की सुविधा देता है।"
+    },
+    "benefits": {
+      "en": "Access to nationwide buyers, transparent online auctions, freedom from local middlemen monopolies, and direct online payments into bank accounts.",
+      "hi": "देश भर के खरीदारों तक पहुंच, पारदर्शी नीलामी, बिचौलियों से मुक्ति और सीधे बैंक खाते में ऑनलाइन भुगतान।"
+    },
+    "eligibility": {
+      "en": "Any farmer or farmer group (FPO) registered with an e-NAM integrated APMC mandi.",
+      "hi": "कोई भी किसान या किसान उत्पादक संगठन (FPO) जो ई-नाम से जुड़ी एपीएमसी मंडी में पंजीकृत हो।"
+    },
+    "documentsRequired": {
+      "en": ["Aadhaar card", "Bank passbook / cancelled cheque", "Mandi registration / Gate pass"],
+      "hi": ["आधार कार्ड", "बैंक पासबुक / रद्द चेक", "मंडी गेट पास या किसान पंजीकरण"]
+    },
+    "howToApply": {
+      "en": "Register for free online at enam.gov.in, via the e-NAM mobile app, or at the registration desk of an integrated APMC mandi.",
+      "hi": "enam.gov.in पर ऑनलाइन या ई-नाम मोबाइल ऐप अथवा मंडी के हेल्पडेस्क पर जाकर निशुल्क पंजीकरण कराएं।"
+    },
+    "officialLink": "https://enam.gov.in",
+    "notes": {
+      "en": "Over 1,300 mandis across 23+ states and UTs are currently integrated. Check portal for integrated mandis in your district.",
+      "hi": "देश भर की 1,300 से अधिक मंडियां जुड़ी हुई हैं। अपने जिले की मंडी की स्थिति पोर्टल पर देखें।"
+    }
+  },
+  {
+    "id": "aif",
+    "name": {
+      "en": "Agriculture Infrastructure Fund (AIF)",
+      "hi": "कृषि अवसंरचना कोष (एआईएफ)"
+    },
+    "category": "Infrastructure",
+    "level": "Central",
+    "shortDescription": {
+      "en": "Medium-long term debt financing for post-harvest management infrastructure and community farming assets with 3% interest subvention.",
+      "hi": "गोदाम, कोल्ड स्टोरेज, प्राथमिक प्रसंस्करण इकाई बनाने के लिए 3% ब्याज छूट पर सुलभ सावधि ऋण।"
+    },
+    "description": {
+      "en": "AIF provides financial support for setting up post-harvest management infrastructure such as cold storage, warehouses, pack-houses, sorting and grading units, and primary processing facilities.",
+      "hi": "एआईएफ कटाई उपरांत प्रबंधन जैसे कोल्ड स्टोरेज, गोदाम, छंटाई-पैकिंग केंद्र और प्राथमिक प्रसंस्करण इकाइयों की स्थापना के लिए वित्तीय ऋण व ब्याज छूट देता है।"
+    },
+    "benefits": {
+      "en": "3% per annum interest subvention on loans up to ₹2 Crore for a maximum tenure of 7 years, along with credit guarantee coverage under CGTMSE.",
+      "hi": "₹2 करोड़ तक के ऋण पर 7 वर्षों के लिए 3% वार्षिक ब्याज छूट और सीजीटीएमएसई के तहत क्रेडिट गारंटी।"
+    },
+    "eligibility": {
+      "en": "Primary Agricultural Credit Societies (PACS), Marketing Cooperative Societies, FPOs, SHGs, Farmers, Agri-entrepreneurs, and Startups.",
+      "hi": "किसान, पैक्स (PACS), कृषि उद्यमी, एफपीओ, स्वयं सहायता समूह (SHG) और स्टार्टअप।"
+    },
+    "documentsRequired": {
+      "en": ["Detailed Project Report (DPR)", "Land documents / lease deed", "KYC documents (PAN, Aadhaar)", "Bank loan application"],
+      "hi": ["विस्तृत परियोजना रिपोर्ट (डीपीआर)", "भूमि दस्तावेज / लीज एग्रीमेंट", "केवाईसी (पैन, आधार)", "बैंक ऋण फॉर्म"]
+    },
+    "howToApply": {
+      "en": "Submit application online via the AIF national portal (agriinfra.dac.gov.in) with your project proposal.",
+      "hi": "कृषि अवसंरचना कोष के आधिकारिक पोर्टल (agriinfra.dac.gov.in) पर ऑनलाइन आवेदन प्रस्तुत करें।"
+    },
+    "officialLink": "https://agriinfra.dac.gov.in",
+    "notes": {
+      "en": "Loans can be converged with other central/state capital subsidy schemes such as PMFME, MIDH.",
+      "hi": "इस ऋण योजना को अन्य योजनाओं (जैसे पीएमएफएमई या एमआईडीएच) के पूंजीगत अनुदान के साथ भी जोड़ा जा सकता है।"
+    }
+  },
+  {
+    "id": "pmkmy",
+    "name": {
+      "en": "PM Kisan Maan-Dhan Yojana (PM-KMY)",
+      "hi": "प्रधानमंत्री किसान मान-धन योजना (पीएम-केएमवाई)"
+    },
+    "category": "Pension",
+    "level": "Central",
+    "shortDescription": {
+      "en": "Old age pension of ₹3,000 per month for small and marginal farmers upon attaining the age of 60 years.",
+      "hi": "60 वर्ष की आयु पूर्ण होने पर लघु व सीमांत किसानों को ₹3,000 प्रति माह की सामाजिक सुरक्षा पेंशन।"
+    },
+    "description": {
+      "en": "PM-KMY is a voluntary and contributory pension scheme for small and marginal farmers of India. Central Government matches the monthly contribution made by the beneficiary.",
+      "hi": "यह छोटे और सीमांत किसानों के लिए एक स्वैच्छिक अंशदायी पेंशन योजना है, जिसमें केंद्र सरकार भी किसान के बराबर का मासिक अंशदान जमा करती है।"
+    },
+    "benefits": {
+      "en": "Assured pension of ₹3,000/month after turning 60. In case of death of the subscriber, the spouse receives 50% as family pension.",
+      "hi": "60 वर्ष के बाद ₹3,000 प्रति माह निश्चित पेंशन। किसान की मृत्यु की स्थिति में जीवनसाथी को 50% पारिवारिक पेंशन।"
+    },
+    "eligibility": {
+      "en": "Small and marginal farmers aged between 18 and 40 years possessing cultivable land up to 2 hectares (5 acres).",
+      "hi": "18 से 40 वर्ष की आयु वाले लघु एवं सीमांत किसान जिनके पास 2 हेक्टेयर (5 एकड़) तक कृषि योग्य भूमि है।"
+    },
+    "documentsRequired": {
+      "en": ["Aadhaar card", "Savings bank account details / IFSC", "Land record copy"],
+      "hi": ["आधार कार्ड", "बचत बैंक खाता विवरण / आईएफएससी", "खसरा/खतौनी की प्रति"]
+    },
+    "howToApply": {
+      "en": "Enroll through any Common Service Centre (CSC) or online on the Maandhan portal (maandhan.in).",
+      "hi": "निकटतम जन सेवा केंद्र (CSC) के माध्यम से या maandhan.in पोर्टल पर जाकर नामांकन कराएं।"
+    },
+    "officialLink": "https://maandhan.in",
+    "notes": {
+      "en": "Monthly contribution ranges from ₹55 to ₹200 depending on entry age. Farmers can auto-debit this directly from their PM-KISAN benefit.",
+      "hi": "उम्र के अनुसार मासिक अंशदान ₹55 से ₹200 तक होता है। किसान इसे सीधे अपनी पीएम-किसान किस्त से कटवा सकते हैं।"
+    }
+  }
+]

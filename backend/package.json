@@ -1,0 +1,26 @@
+{
+  "name": "kheti-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Kheti - Agriculture portal for Indian farmers",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "cloudinary": "^2.11.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "form-data": "^4.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.7.0",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "mongodb-memory-server": "^10.0.0",
+    "nodemon": "^3.1.7"
+  }
+}

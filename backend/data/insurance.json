@@ -1,0 +1,237 @@
+{
+  "title": {
+    "en": "Pradhan Mantri Fasal Bima Yojana (PMFBY) Guide",
+    "hi": "प्रधानमंत्री फसल बीमा योजना (पीएमएफबीवाई) मार्गदर्शिका"
+  },
+  "subtitle": {
+    "en": "A transparent, comprehensive guide to protecting your crop yield and income against natural risks.",
+    "hi": "प्राकृतिक आपदाओं से अपनी फसल की उपज और आय को सुरक्षित करने के लिए स्पष्ट और संपूर्ण मार्गदर्शिका।"
+  },
+  "officialPortalUrl": "https://pmfby.gov.in",
+  "tollFreeNumber": "14447",
+  "appDownloadUrl": "https://play.google.com/store/apps/details?id=in.farmguide.farmerapp",
+  "overview": {
+    "en": "Pradhan Mantri Fasal Bima Yojana (PMFBY) is the flagship crop insurance scheme of the Government of India. It replaces older yield insurance schemes by providing a uniform, low premium rate for farmers while offering end-to-end risk coverage from sowing to post-harvest stages.",
+    "hi": "प्रधानमंत्री फसल बीमा योजना (पीएमएफबीवाई) भारत सरकार की प्रमुख फसल बीमा योजना है। यह बुआई से लेकर कटाई के बाद तक के सभी जोखिमों के लिए किसानों को बहुत ही कम प्रीमियम दर पर संपूर्ण वित्तीय सुरक्षा प्रदान करती है।"
+  },
+  "premiumRates": [
+    {
+      "season": {
+        "en": "Kharif Crops (Food & Oilseeds)",
+        "hi": "खरीफ फसलें (खाद्यान्न व तिलहन)"
+      },
+      "examples": {
+        "en": "Paddy, Maize, Bajra, Soybean, Cotton (notified)",
+        "hi": "धान, मक्का, बाजरा, सोयाबीन, कपास"
+      },
+      "farmerShare": "2.0%",
+      "govtShare": {
+        "en": "Balance of actuarial premium shared equally by Central and State Governments",
+        "hi": "शेष प्रीमियम केंद्र और राज्य सरकार द्वारा समान रूप से वहन किया जाता है"
+      }
+    },
+    {
+      "season": {
+        "en": "Rabi Crops (Food & Oilseeds)",
+        "hi": "रबी फसलें (खाद्यान्न व तिलहन)"
+      },
+      "examples": {
+        "en": "Wheat, Mustard, Gram, Barley, Lentils",
+        "hi": "गेहूं, सरसों, चना, जौ, मसूर"
+      },
+      "farmerShare": "1.5%",
+      "govtShare": {
+        "en": "Balance of actuarial premium shared equally by Central and State Governments",
+        "hi": "शेष प्रीमियम केंद्र और राज्य सरकार द्वारा समान रूप से वहन किया जाता है"
+      }
+    },
+    {
+      "season": {
+        "en": "Annual Commercial / Horticultural Crops",
+        "hi": "वार्षिक वाणिज्यिक एवं बागवानी फसलें"
+      },
+      "examples": {
+        "en": "Sugarcane, Potato, Onion, Ginger, Fruits & Vegetables",
+        "hi": "गन्ना, आलू, प्याज, अदरक, फल और सब्जियां"
+      },
+      "farmerShare": "5.0%",
+      "govtShare": {
+        "en": "Balance of actuarial premium shared equally by Central and State Governments",
+        "hi": "शेष प्रीमियम केंद्र और राज्य सरकार द्वारा समान रूप से वहन किया जाता है"
+      }
+    }
+  ],
+  "coveredRisks": [
+    {
+      "stage": {
+        "en": "Prevented Sowing / Planting Risk",
+        "hi": "बुआई / रोपाई से वंचित होने का जोखिम"
+      },
+      "description": {
+        "en": "Insured area prevented from sowing due to deficit rainfall or adverse seasonal conditions. Eligible for claim up to 25% of sum insured.",
+        "hi": "सूखे या प्रतिकूल मौसम के कारण किसान यदि खेत में बुआई नहीं कर पाता, तो बीमित राशि का 25% तक दावा देय होता है।"
+      }
+    },
+    {
+      "stage": {
+        "en": "Standing Crop (Sowing to Harvesting)",
+        "hi": "खड़ी फसल का नुकसान (बुआई से कटाई तक)"
+      },
+      "description": {
+        "en": "Comprehensive coverage for yield losses due to non-preventable risks such as drought, dry spells, flood, inundation, pests/diseases, landslide, natural fire, and storm.",
+        "hi": "सूखा, बाढ़, जलभराव, कीट, रोग, भूस्खलन और तूफान जैसी प्राकृतिक आपदाओं से उपज में होने वाले नुकसान की संपूर्ण भरपाई।"
+      }
+    },
+    {
+      "stage": {
+        "en": "Post-Harvest Losses",
+        "hi": "कटाई उपरांत नुकसान"
+      },
+      "description": {
+        "en": "Coverage available up to a maximum period of 14 days from harvesting for crops kept in 'cut & spread' condition in the field against cyclones, cyclonic rains and unseasonal rains.",
+        "hi": "खेत में सूखने के लिए रखी गई फसल को कटाई के 14 दिनों तक चक्रवात या बेमौसम बारिश से होने वाले नुकसान का कवरेज।"
+      }
+    },
+    {
+      "stage": {
+        "en": "Localized Calamities",
+        "hi": "स्थानीयकृत आपदाएं"
+      },
+      "description": {
+        "en": "Loss or damage resulting from occurrence of identified localized risks of hailstorm, landslide, inundation, cloud burst, and natural fire affecting isolated farms.",
+        "hi": "ओलावृष्टि, भूस्खलन, बादल फटने या खेत में आग लगने जैसी स्थानीय आपदाओं पर खेत स्तर पर त्वरित नुकसान का आकलन व भुगतान।"
+      }
+    }
+  ],
+  "stepsToEnrol": [
+    {
+      "step": 1,
+      "title": {
+        "en": "Check Notified Crops & Deadline",
+        "hi": "अधिसूचित फसल और अंतिम तिथि देखें"
+      },
+      "description": {
+        "en": "Check if your crop and district are notified for PMFBY coverage for the ongoing season, and note the application cut-off date (usually July 31 for Kharif, Dec 31 for Rabi).",
+        "hi": "पता करें कि चालू सीजन में आपकी फसल और जिला पीएमएफबीवाई के तहत अधिसूचित है या नहीं, और आवेदन की अंतिम तिथि नोट करें।"
+      }
+    },
+    {
+      "step": 2,
+      "title": {
+        "en": "Prepare Necessary Documents",
+        "hi": "आवश्यक दस्तावेज तैयार रखें"
+      },
+      "description": {
+        "en": "Keep your Aadhaar card, Land record (Khasra / Khatauni / 7-12 extract), active bank passbook with IFSC, and Sowing Certificate (or self-declaration of sowing) ready.",
+        "hi": "आधार कार्ड, जमीन का पर्चा (खसरा/खतौनी), बैंक पासबुक और बुआई का स्व-घोषणा पत्र तैयार रखें।"
+      }
+    },
+    {
+      "step": 3,
+      "title": {
+        "en": "Choose Enrollment Channel",
+        "hi": "आवेदन का माध्यम चुनें"
+      },
+      "description": {
+        "en": "Apply through any of the 3 easy channels: (A) National Crop Insurance Portal (pmfby.gov.in), (B) Nearest Common Service Centre (CSC) / Village Level Entrepreneur, or (C) Your Bank Branch where you have your account or KCC.",
+        "hi": "3 आसान माध्यमों में से किसी एक को चुनें: (1) आधिकारिक पोर्टल pmfby.gov.in, (2) नजदीकी जन सेवा केंद्र (CSC), या (3) अपनी बैंक शाखा।"
+      }
+    },
+    {
+      "step": 4,
+      "title": {
+        "en": "Pay Subsidized Farmer Share",
+        "hi": "किसान प्रीमियम अंश जमा करें"
+      },
+      "description": {
+        "en": "Pay only the farmer share (1.5% to 5%) online or at the counter. For loanee farmers with active KCC, the bank auto-debits unless opted out in writing.",
+        "hi": "केवल निर्धारित किसान अंश (1.5% से 5%) जमा करें। रसीद और बीमा पॉलिसी नंबर अवश्य प्राप्त करें।"
+      }
+    },
+    {
+      "step": 5,
+      "title": {
+        "en": "Collect Acknowledgement Receipt",
+        "hi": "पावती रसीद सुरक्षित रखें"
+      },
+      "description": {
+        "en": "Always save the application number and receipt. You can track your insurance policy status anytime on pmfby.gov.in.",
+        "hi": "आवेदन संख्या और रसीद संभाल कर रखें। इसके जरिए आप पोर्टल पर कभी भी पॉलिसी की स्थिति जांच सकते हैं।"
+      }
+    }
+  ],
+  "lossIntimationTimeline": [
+    {
+      "timeWindow": {
+        "en": "Within 72 Hours of Disaster",
+        "hi": "आपदा के 72 घंटे के भीतर"
+      },
+      "action": {
+        "en": "Mandatory Loss Intimation: Inform the insurance company or call the national Kisan Call Centre / PMFBY helpline (14447), or submit intimation on the Crop Insurance mobile app. Share photos and survey numbers.",
+        "hi": "अनिवार्य सूचना: 72 घंटे के भीतर बीमा कंपनी, टोल-फ्री नंबर 14447 अथवा 'क्रॉप इंश्योरेंस' ऐप पर नुकसान की सूचना दर्ज कराएं।"
+      }
+    },
+    {
+      "timeWindow": {
+        "en": "Within 48 Hours of Intimation",
+        "hi": "सूचना मिलने के 48 घंटे में"
+      },
+      "action": {
+        "en": "Surveyor Appointment: An authorized loss assessor is deputed by the insurance company along with the state agriculture department official.",
+        "hi": "सर्वेक्षक की नियुक्ति: बीमा कंपनी और कृषि विभाग के संयुक्त दल द्वारा खेत के भौतिक निरीक्षण के लिए सर्वेक्षक नियुक्त किया जाता है।"
+      }
+    },
+    {
+      "timeWindow": {
+        "en": "Within 10 Days of Survey",
+        "hi": "सर्वे के 10 दिनों के भीतर"
+      },
+      "action": {
+        "en": "Assessment Report Submission: The joint assessment report with GPS-tagged damage photographs is uploaded to the National Crop Insurance Portal.",
+        "hi": "नुकसान का आंकलन: फोटो और जीपीएस लोकेशन के साथ नुकसान की विस्तृत रिपोर्ट पोर्टल पर अपलोड की जाती है।"
+      }
+    },
+    {
+      "timeWindow": {
+        "en": "Within 15 Days of Approval",
+        "hi": "मंजूरी के 15 दिनों में"
+      },
+      "action": {
+        "en": "Direct DBT Claim Settlement: Claim amount is directly credited to your Aadhaar-linked bank account without any intermediary.",
+        "hi": "सीधे खाते में भुगतान: स्वीकृत दावा राशि बिना किसी बिचौलिए के सीधे आपके आधार-लिंक बैंक खाते में डीबीटी द्वारा भेजी जाती है।"
+      }
+    }
+  ],
+  "importantConditions": [
+    {
+      "title": {
+        "en": "72-Hour Loss Notification Deadline",
+        "hi": "72 घंटे की समय सीमा"
+      },
+      "detail": {
+        "en": "For localized calamities (hailstorm, cloudburst, natural fire, inundation) and post-harvest damage, claim is admissible ONLY if intimation is made within 72 hours of the occurrence.",
+        "hi": "ओलावृष्टि, जलभराव या कटाई बाद के नुकसान पर दावा तभी मान्य होता है जब घटना के 72 घंटे के भीतर आधिकारिक सूचना दर्ज कराई जाए।"
+      }
+    },
+    {
+      "title": {
+        "en": "Opt-Out for Loanee Farmers",
+        "hi": "केसीसी खाताधारकों के लिए विकल्प"
+      },
+      "detail": {
+        "en": "Loanee farmers are automatically covered. If you do not wish to be insured, you must submit a written opt-out declaration to your bank at least 7 days before the seasonal cut-off date.",
+        "hi": "केसीसी धारकों का बीमा बैंक द्वारा स्वतः किया जाता है। यदि आप योजना से बाहर होना चाहते हैं तो कट-ऑफ तिथि से 7 दिन पूर्व बैंक में लिखित घोषणा दें।"
+      }
+    },
+    {
+      "title": {
+        "en": "Aadhaar Seeding with Bank Account",
+        "hi": "बैंक खाते से आधार लिंक होना जरूरी"
+      },
+      "detail": {
+        "en": "All claims are paid via Aadhaar Payment Bridge (APB). Ensure that your bank account is active and seeded with your Aadhaar number to prevent payment bounces.",
+        "hi": "सभी बीमा दावों का भुगतान डीबीटी से होता है। बैंक खाते में एनपीसीआई/आधार मैपिंग चालू होना जरूरी है ताकि पैसा अटक न जाए।"
+      }
+    }
+  ]
+}

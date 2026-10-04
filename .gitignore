@@ -1,0 +1,10 @@
+# Root gitignore for Kheti
+node_modules/
+*/node_modules/
+.env
+*/.env
+*.log
+dist/
+*/dist/
+.DS_Store
+uploads/

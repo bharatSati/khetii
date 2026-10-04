@@ -1,0 +1,242 @@
+[
+  {
+    "id": "wheat-cultivation-guide",
+    "category": "Crop Guides",
+    "title": {
+      "en": "Wheat Cultivation: Sowing, Irrigation & Nutrient Management",
+      "hi": "गेहूं की उन्नत खेती: बुआई, सिंचाई और उर्वरक प्रबंधन"
+    },
+    "summary": {
+      "en": "Complete practical guide for achieving 20-24 quintals/acre yield in irrigated timely-sown wheat (HD-2967, HD-3086, DBW-187, DBW-222).",
+      "hi": "सिंचित समय पर बोए जाने वाले गेहूं (एचडी-2967, डीबीडब्ल्यू-187 आदि) से प्रति एकड़ 20-24 क्विंटल पैदावार लेने की संपूर्ण विधि।"
+    },
+    "season": "Rabi (November - April)",
+    "idealTiming": {
+      "en": "Optimum sowing: November 1 to November 25. Delay beyond Nov 30 reduces yield by 30-40 kg per day per acre.",
+      "hi": "बुआई का सर्वोत्तम समय: 1 से 25 नवंबर। 30 नवंबर के बाद देरी होने पर प्रति दिन 30-40 किलो प्रति एकड़ उपज घटती है।"
+    },
+    "seedRateAndTreatment": {
+      "en": "Seed rate: 40-45 kg per acre. Treat seed with Carboxin + Thiram (Vitavax) @ 2g/kg seed or Trichoderma viride @ 5g/kg seed against loose smut and flag smut.",
+      "hi": "बीज दर: 40-45 किग्रा प्रति एकड़। कंडुआ रोग से बचाव हेतु थीरम/कार्बोक्सिन 2 ग्राम या ट्राइकोडर्मा 5 ग्राम प्रति किग्रा बीज से उपचारित करें।"
+    },
+    "fertilizerDose": {
+      "en": "Per acre: 60 kg Urea, 50 kg DAP, 25 kg MOP, and 10 kg Zinc Sulphate (21%). Apply 1/3rd Urea + all DAP & MOP as basal at sowing; apply remaining Urea in two splits before 1st and 2nd irrigations.",
+      "hi": "प्रति एकड़: 60 किग्रा यूरिया, 50 किग्रा डीएपी, 25 किग्रा पोटाश और 10 किग्रा जिंक सल्फेट (21%)। बुआई के समय पूरा डीएपी, पोटाश व 1/3 यूरिया डालें। शेष यूरिया पहली व दूसरी सिंचाई पर दें।"
+    },
+    "criticalIrrigationStages": [
+      { "stage": "Crown Root Initiation (CRI)", "daysAfterSowing": "20-25 days", "importance": "Most critical stage. Water stress here causes severe tillering loss." },
+      { "stage": "Tillering Stage", "daysAfterSowing": "40-45 days", "importance": "Enhances productive tillers." },
+      { "stage": "Jointing / Late Tillering", "daysAfterSowing": "60-65 days", "importance": "Promotes stem elongation and earhead formation." },
+      { "stage": "Flowering / Booting", "daysAfterSowing": "80-85 days", "importance": "Crucial for grain setting." },
+      { "stage": "Milking Stage", "daysAfterSowing": "100-105 days", "importance": "Prevents terminal heat shrivelling." },
+      { "stage": "Dough Stage", "daysAfterSowing": "115-120 days", "importance": "Ensures grain plumpness." }
+    ],
+    "dosAndDonts": {
+      "dos": [
+        { "en": "Calibrate seed drill depth to 4-5 cm; do not sow too deep.", "hi": "बीज को 4-5 सेमी की उचित गहराई पर ही बोएं, ज्यादा गहरा न दबाएं।" },
+        { "en": "Apply Zinc Sulphate separately from DAP to prevent zinc phosphate precipitation.", "hi": "जिंक सल्फेट को कभी भी डीएपी के साथ मिलाकर न डालें, अलग से डालें।" },
+        { "en": "Spray Potassium Nitrate (13-0-45) @ 1.5% at boot and anthesis to combat high temperatures in March.", "hi": "मार्च की पछुआ हवा और गर्मी से बचाने के लिए 13:0:45 का 1.5% छिड़काव करें।" }
+      ],
+      "donts": [
+        { "en": "Never flood field heavily at CRI stage; light irrigation prevents yellowing of young seedlings.", "hi": "सीआरआई अवस्था पर भारी पानी न भरें; हल्का पानी दें जिससे पौधे पीले न पड़ें।" },
+        { "en": "Avoid spraying broad-spectrum herbicides on windy days to prevent drift onto neighbouring mustard/vegetable crops.", "hi": "हवा चलने पर खरपतवारनाशक का छिड़काव न करें, सरसों या सब्जियों पर असर पड़ सकता है।" }
+      ]
+    }
+  },
+  {
+    "id": "paddy-direct-and-transplanting",
+    "category": "Crop Guides",
+    "title": {
+      "en": "Rice / Paddy: Nursery, DSR & Water Management",
+      "hi": "धान की उन्नत खेती: नर्सरी, सीधी बुआई (डीएसआर) और जल प्रबंधन"
+    },
+    "summary": {
+      "en": "Practical guide on nursery raising, transplanting (SRI / traditional) and water-saving Direct Seeded Rice (DSR) techniques.",
+      "hi": "धान की नर्सरी, रोपाई तथा 30% पानी की बचत करने वाली सीधी बुआई (DSR) तकनीक की व्यावहारिक जानकारी।"
+    },
+    "season": "Kharif (June - November)",
+    "idealTiming": {
+      "en": "Nursery sowing: May 20 to June 15. Transplanting: 25-30 days old seedlings (late June to mid-July). Direct seeding: First week of June with pre-monsoon showers.",
+      "hi": "नर्सरी बुआई: 20 मई से 15 जून। रोपाई: 25-30 दिन के पौधे (जून अंत से जुलाई मध्य)। सीधी बुआई: जून का पहला पखवाड़ा।"
+    },
+    "seedRateAndTreatment": {
+      "en": "Transplanted: 5-6 kg/acre for hybrids, 10-12 kg/acre for inbred varieties. DSR: 8-10 kg/acre. Soak seed in brine solution to discard floating light seeds, then treat with Carbendazim @ 2g/kg.",
+      "hi": "रोपाई हेतु: 5-6 किग्रा/एकड़ (संकर) या 10-12 किग्रा (पारंपरिक)। सीधी बुआई: 8-10 किग्रा। नमक के पानी में तैरते हल्के बीज अलग करें और कार्बेन्डाजिम 2 ग्राम प्रति किग्रा से उपचार करें।"
+    },
+    "fertilizerDose": {
+      "en": "Per acre: 65 kg Urea, 35 kg DAP, 25 kg MOP, and 10 kg Zinc Sulphate (33%). Zinc is essential to prevent Khaira disease (khaira rog).",
+      "hi": "प्रति एकड़: 65 किग्रा यूरिया, 35 किग्रा डीएपी, 25 किग्रा पोटाश और 10 किग्रा जिंक सल्फेट (33%)। खैरा रोग से बचाव के लिए जिंक अत्यंत आवश्यक है।"
+    },
+    "criticalIrrigationStages": [
+      { "stage": "Transplanting / Establishment", "daysAfterSowing": "0-10 days", "importance": "Maintain 2-3 cm shallow water layer for easy root establishment." },
+      { "stage": "Active Tillering", "daysAfterSowing": "20-40 days", "importance": "Alternate wetting and drying (AWD) saves water and prevents root suffocation." },
+      { "stage": "Panicle Initiation & Flowering", "daysAfterSowing": "60-80 days", "importance": "No water stress allowed; maintain 5 cm standing water." },
+      { "stage": "Grain Filling", "daysAfterSowing": "85-105 days", "importance": "Moist soil condition; drain water 10-14 days before harvest." }
+    ],
+    "dosAndDonts": {
+      "dos": [
+        { "en": "Plant only 2 seedlings per hill at 20x15 cm spacing for optimal sunlight and tillering.", "hi": "20x15 सेमी की दूरी पर प्रति स्थान 2 पौधे लगाएं ताकि भरपूर कल्ले फूटें।" },
+        { "en": "For DSR, spray Pendimethalin 38.7% CS @ 700 ml/acre within 48 hours of sowing to control early weeds.", "hi": "सीधी बुआई में बुआई के 48 घंटे के भीतर पेंडीमेथालिन 700 मिली प्रति एकड़ का छिड़काव करें।" }
+      ],
+      "donts": [
+        { "en": "Do not keep field continuously submerged after tillering; alternate wetting and drying saves up to 30% water without yield penalty.", "hi": "कल्ले निकलने के बाद खेत में लगातार पानी भरकर न रखें; बीच-बीच में हवा लगने दें।" }
+      ]
+    }
+  },
+  {
+    "id": "soil-organic-carbon-improvement",
+    "category": "Soil & Fertiliser",
+    "title": {
+      "en": "Improving Soil Organic Carbon (SOC) & Health",
+      "hi": "मिट्टी में जैविक कार्बन और उर्वरा शक्ति बढ़ाने के उपाय"
+    },
+    "summary": {
+      "en": "Techniques to raise organic carbon from critical 0.3% levels to healthy 0.7-1.0% using green manuring, biochar, compost and residue recycling.",
+      "hi": "हरी खाद (ढैंचा/सनई), नाडेप कम्पोस्ट और फसल अवशेष प्रबंधन से मिट्टी का जीवांश कार्बन बढ़ाकर पैदावार बढ़ाने की वैज्ञानिक तकनीक।"
+    },
+    "season": "Year-round (Best between Rabi & Kharif: April-June)",
+    "idealTiming": {
+      "en": "Sow green manure (Dhaincha or Sunhemp) immediately after wheat harvest in late April or May.",
+      "hi": "गेहूं कटाई के तुरंत बाद अप्रैल अंत या मई में ढैंचा अथवा सनई की बुआई करें।"
+    },
+    "seedRateAndTreatment": {
+      "en": "Dhaincha (Sesbania aculeata): 12-15 kg/acre. Sunhemp (Crotalaria juncea): 15-20 kg/acre.",
+      "hi": "ढैंचा बीज: 12-15 किग्रा प्रति एकड़। सनई: 15-20 किग्रा प्रति एकड़।"
+    },
+    "fertilizerDose": {
+      "en": "Apply 10-15 kg SSP/acre at green manure sowing to accelerate root nodule development and phosphate fixation.",
+      "hi": "हरी खाद बोते समय 15 किग्रा सिंगल सुपर फॉस्फेट (एसएसपी) डालें जिससे जड़ों में नाइट्रोजन की ग्रंथियां तेजी से बनें।"
+    },
+    "criticalIrrigationStages": [
+      { "stage": "Sowing to 15 Days", "daysAfterSowing": "1-15 days", "importance": "1-2 light irrigations for rapid canopy establishment." },
+      { "stage": "Ploughing-in Stage", "daysAfterSowing": "40-45 days", "importance": "Turn crop into soil with disc plough when plants are tender and just flowering." }
+    ],
+    "dosAndDonts": {
+      "dos": [
+        { "en": "Incorporate green manure into soil at 40-45 days before woodiness develops in stems.", "hi": "पौधे को 40-45 दिन की अवस्था में जब वह मुलायम हो, तभी मिट्टी में पलटें।" },
+        { "en": "Allow 10-14 days for decomposition with moist soil before transplanting paddy.", "hi": "मिट्टी में मिलाने के बाद 10-14 दिन सड़ने दें, फिर अगली फसल की रोपाई करें।" },
+        { "en": "Recycle paddy and wheat straw using fungal decomposer consortia instead of stubble burning.", "hi": "पराली को जलाने की बजाय वेस्ट डीकंपोजर की मदद से खेत में ही खाद बनाएं।" }
+      ],
+      "donts": [
+        { "en": "Never burn crop residues; burning destroys beneficial microbes, earthworms and 100% of nitrogen.", "hi": "फसल अवशेषों में कभी आग न लगाएं; इससे मित्र कीट, केंचुए और नाइट्रोजन नष्ट हो जाते हैं।" }
+      ]
+    }
+  },
+  {
+    "id": "drip-and-micro-irrigation",
+    "category": "Irrigation & Water",
+    "title": {
+      "en": "Drip Irrigation & Fertigation Best Practices",
+      "hi": "ड्रिप सिंचाई और फर्टीगेशन (घुलनशील खाद) के सही नियम"
+    },
+    "summary": {
+      "en": "Save up to 50% water and 30% fertilizer while doubling crop quality using in-line drip systems for sugarcane, cotton, vegetables and fruit orchards.",
+      "hi": "गन्ना, कपास, सब्जियों और बागवानी में ड्रिप प्रणाली से 50% पानी और 30% खाद की बचत करने की सटीक विधि।"
+    },
+    "season": "All Seasons",
+    "idealTiming": {
+      "en": "Irrigate during cooler morning hours (6 AM - 10 AM) to minimize evaporation losses.",
+      "hi": "सुबह 6 से 10 बजे के बीच सिंचाई करें ताकि वाष्पीकरण से पानी का नुकसान न हो।"
+    },
+    "seedRateAndTreatment": {
+      "en": "Not applicable (irrigation system guidance).",
+      "hi": "लागू नहीं (सिंचाई उपकरण प्रणाली)।"
+    },
+    "fertilizerDose": {
+      "en": "Use 100% water-soluble fertilizers (WSF) like 19:19:19, 12:61:00 (MAP), 0:0:50 (SOP) and Calcium Nitrate via Venturi injector.",
+      "hi": "वेंचुरी से केवल 100% घुलनशील खाद (19:19:19, 0:52:34, 0:0:50 आदि) का ही इस्तेमाल करें।"
+    },
+    "criticalIrrigationStages": [
+      { "stage": "Filter Backwash", "daysAfterSowing": "Daily", "importance": "Clean disc and screen filters daily to prevent emitter clogging." },
+      { "stage": "Acid Treatment", "daysAfterSowing": "Monthly", "importance": "Flush lateral lines with Hydrochloric acid (pH 4) or bleaching powder to remove algae and calcium scales." }
+    ],
+    "dosAndDonts": {
+      "dos": [
+        { "en": "Always run clean water for 10 minutes before and 15 minutes after fertigation to flush laterals.", "hi": "फर्टीगेशन से पहले 10 मिनट और बाद में 15 मिनट सादा पानी चलाकर पाइप को साफ करें।" },
+        { "en": "Check operating pressure (1.0 to 1.5 kg/cm2) on the pressure gauge regularly.", "hi": "प्रेशर गेज पर सही दबाव (1.0 से 1.5 किग्रा) की नियमित जांच करें।" }
+      ],
+      "donts": [
+        { "en": "Never dissolve ordinary granular SSP or MOP in drip systems; insoluble fillers clog drippers permanently.", "hi": "साधारण दानेदार पोटाश या एसएसपी ड्रिप में न डालें, ड्रिपर चोक हो जाएंगे।" }
+      ]
+    }
+  },
+  {
+    "id": "integrated-pest-management-ipm",
+    "category": "Pest & Disease Management",
+    "title": {
+      "en": "Integrated Pest Management (IPM): Biological & Chemical Balance",
+      "hi": "एकीकृत कीट प्रबंधन (आईपीएम): जैविक और रासायनिक संतुलन"
+    },
+    "summary": {
+      "en": "Cost-effective insect pest control using yellow sticky traps, pheromone traps, neem formulations, and targeted chemical sprays at Economic Threshold Levels (ETL).",
+      "hi": "पीले चिपचिपे कार्ड, फेरोमोन ट्रैप, नीम तेल और ईटीएल सीमा पर सटीक कीटनाशक से फसल सुरक्षा।"
+    },
+    "season": "Year-round",
+    "idealTiming": {
+      "en": "Install monitoring traps within 15-20 days of crop emergence before pest population explodes.",
+      "hi": "फसल उगने के 15-20 दिन बाद ही निगरानी ट्रैप लगा दें ताकि कीट की शुरुआत में ही पहचान हो सके।"
+    },
+    "seedRateAndTreatment": {
+      "en": "Treat seeds with biological antagonists (Trichoderma viride @ 5g/kg or Pseudomonas fluorescens @ 10g/kg).",
+      "hi": "जैविक फफूंदनाशी ट्राइकोडर्मा विरिडी (5 ग्राम/किग्रा) या स्यूडोमोनास से बीज शोधन करें।"
+    },
+    "fertilizerDose": {
+      "en": "Avoid excessive nitrogen (Urea) application as it produces tender, succulent foliage that attracts sucking pests (aphids, whitefly, thrips).",
+      "hi": "यूरिया की अधिक मात्रा से बचें; ज्यादा यूरिया से पौधा कोमल होकर रसचूसक कीटों (माहू, सफेद मक्खी) को आकर्षित करता है।"
+    },
+    "criticalIrrigationStages": [
+      { "stage": "Monitoring", "daysAfterSowing": "Weekly", "importance": "Count insects per trap to determine if ETL is breached." },
+      { "stage": "Action Threshold", "daysAfterSowing": "As per ETL", "importance": "Intervene only when pest damage is likely to exceed economic cost of control." }
+    ],
+    "dosAndDonts": {
+      "dos": [
+        { "en": "Install 6-8 pheromone traps per acre for bollworm, stem borer, and armyworm monitoring.", "hi": "तना छेदक या सुंडी की निगरानी के लिए प्रति एकड़ 6-8 फेरोमोन ट्रैप लगाएं।" },
+        { "en": "Install 15-20 yellow sticky traps per acre for whiteflies and aphids, and blue sticky traps for thrips.", "hi": "सफेद मक्खी और माहू के लिए पीले कार्ड तथा थ्रिप्स के लिए नीले कार्ड लगाएं।" },
+        { "en": "Use neem oil (Azadirachtin 10,000 ppm) @ 2 ml/litre as first line preventive spray.", "hi": "कीट के शुरुआती लक्षण दिखते ही नीम तेल (10,000 ppm) 2 मिली प्रति लीटर का छिड़काव करें।" }
+      ],
+      "donts": [
+        { "en": "Do not spray broad-spectrum insecticides during peak morning bloom to protect honeybees and pollinators.", "hi": "फूल खिलने के समय सुबह कीटनाशक न छिड़कें ताकि मधुमक्खियों और परागणकों को नुकसान न हो।" }
+      ]
+    }
+  },
+  {
+    "id": "post-harvest-and-grain-storage",
+    "category": "Post-Harvest & Storage",
+    "title": {
+      "en": "Scientific Grain Storage & Post-Harvest Loss Prevention",
+      "hi": "अनाज का वैज्ञानिक भंडारण और नुकसान से बचाव"
+    },
+    "summary": {
+      "en": "Maintain grain moisture below 10-12%, clean silos/bins, and use airtight hermetic storage or neem leaves to protect stored grains from weevils and fungus without harmful chemical residues.",
+      "hi": "अनाज को 10-12% नमी पर सुखाकर वैज्ञानिक कोठी में रखने तथा घुन/सूंड़ी से सुरक्षित रखने के उपाय।"
+    },
+    "season": "Harvesting & Post-Harvest Period (April-May & October-November)",
+    "idealTiming": {
+      "en": "Sun-dry grains on clean tarpaulins for 3-4 consecutive sunny days until moisture drops below 12%. Test: A grain should break with a sharp 'crack' between teeth.",
+      "hi": "अनाज को पक्के फर्श या तिरपाल पर 3-4 दिन तेज धूप में सुखाएं ताकि नमी 10-12% से कम हो जाए (दांत से दबाने पर कट की आवाज आए)।"
+    },
+    "seedRateAndTreatment": {
+      "en": "Clean and winnow to remove broken kernels, chaff, and foreign matter which attract moisture and insects.",
+      "hi": "अनाज को अच्छे से छानकर टूटे दाने और कचरा अलग करें।"
+    },
+    "fertilizerDose": {
+      "en": "Not applicable (Storage management).",
+      "hi": "लागू नहीं (भंडारण प्रबंधन)।"
+    },
+    "criticalIrrigationStages": [
+      { "stage": "Store Preparation", "daysAfterSowing": "1 week before storage", "importance": "Clean bins, plaster mud cracks, spray neem extract or malathion 50EC (diluted) on walls." },
+      { "stage": "Periodic Inspection", "daysAfterSowing": "Fortnightly", "importance": "Check for moisture condensation, warm spots or weevil frass." }
+    ],
+    "dosAndDonts": {
+      "dos": [
+        { "en": "Store bags on wooden pallets or bamboo mats at least 1 foot away from walls to prevent dampness.", "hi": "अनाज की बोरियों को दीवार से कम से कम 1 फीट दूर और लकड़ी के पटिए (पैलेट) पर रखें।" },
+        { "en": "Use hermetic airtight storage bags (PICS bags) to suffocate any insect eggs naturally.", "hi": "हवारोधी हरमेटिक बैग (PICS बैग) का प्रयोग करें, जिसमें हवा न जाने से कीड़े स्वतः समाप्त हो जाते हैं।" },
+        { "en": "Mix shade-dried neem leaves (1 kg per 100 kg grain) or activated wood ash in seed bins.", "hi": "छाया में सुखाई गई नीम की पत्तियां (1 किलो प्रति क्विंटल) मिलाकर रखें।" }
+      ],
+      "donts": [
+        { "en": "Never store freshly harvested grain with higher than 12% moisture; damp grain rots quickly and generates aflatoxin mold.", "hi": "गीला अनाज कभी भंडारित न करें; इससे फफूंद लगती है और विषैला एफ्लाटॉक्सिन पैदा होता है।" },
+        { "en": "Never use dangerous pesticide tablets (Aluminium Phosphide) inside residential rooms or kitchen areas.", "hi": "रहने वाले कमरों में सल्फास की गोलियों का प्रयोग कभी न करें, यह जानलेवा है।" }
+      ]
+    }
+  }
+]

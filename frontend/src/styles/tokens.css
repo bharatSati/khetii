@@ -1,0 +1,203 @@
+/* Base Root - Light Theme */
+:root {
+  --theme-mode: 'light';
+
+  /* Neo-Brutalism Colors */
+  --nb-black: #000000;
+  --nb-white: #ffffff;
+  --nb-canvas: #fbf9f1;
+  --nb-canvas-alt: #f3efe0;
+  --nb-card-bg: #ffffff;
+
+  --nb-border-color: #000000;
+  --nb-shadow-color: #000000;
+
+  /* Accents */
+  --nb-green: #15803d;
+  --nb-green-bright: #22c55e;
+  --nb-green-light: #bbf7d0;
+  --nb-green-subtle: #dcfce7;
+
+  --nb-yellow: #facc15;
+  --nb-yellow-bright: #fde047;
+  --nb-yellow-light: #fef08a;
+  --nb-yellow-subtle: #fef9c3;
+
+  --nb-orange: #ea580c;
+  --nb-orange-bright: #fb923c;
+  --nb-orange-light: #fed7aa;
+  --nb-orange-subtle: #ffedd5;
+
+  --nb-blue: #0284c7;
+  --nb-blue-bright: #38bdf8;
+  --nb-blue-light: #bae6fd;
+  --nb-blue-subtle: #e0f2fe;
+
+  --nb-red: #dc2626;
+  --nb-red-bright: #ef4444;
+  --nb-red-light: #fecaca;
+  --nb-red-subtle: #fee2e2;
+
+  --nb-purple: #7c3aed;
+  --nb-purple-light: #ddd6fe;
+
+  /* Typography */
+  --font-family-base: 'Plus Jakarta Sans', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-hindi: 'Noto Sans Devanagari', sans-serif;
+
+  /* Borders & Shadows */
+  --border-thick: 3px solid var(--nb-border-color);
+  --border-medium: 2.5px solid var(--nb-border-color);
+  --border-thin: 2px solid var(--nb-border-color);
+
+  --shadow-sm: 2px 2px 0px var(--nb-shadow-color);
+  --shadow-md: 4px 4px 0px var(--nb-shadow-color);
+  --shadow-lg: 6px 6px 0px var(--nb-shadow-color);
+  --shadow-xl: 8px 8px 0px var(--nb-shadow-color);
+  --shadow-active: 1px 1px 0px var(--nb-shadow-color);
+
+  /* Radii */
+  --radius-none: 0px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 9999px;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+
+  /* Layout */
+  --header-height: 72px;
+  --sidebar-width: 260px;
+  --mobile-nav-height: 68px;
+
+  /* Semantic Compatibility */
+  --color-primary-darker: var(--nb-black);
+  --color-primary-dark: #15803d;
+  --color-primary: #16a34a;
+  --color-primary-light: #22c55e;
+  --color-primary-subtle: var(--nb-green-light);
+  --color-primary-faint: var(--nb-green-subtle);
+
+  --color-earth-dark: var(--nb-black);
+  --color-earth: #ea580c;
+  --color-earth-light: #fb923c;
+  --color-earth-subtle: var(--nb-orange-light);
+
+  --color-gold-dark: #b45309;
+  --color-gold: #f59e0b;
+  --color-gold-bright: #facc15;
+  --color-gold-subtle: var(--nb-yellow-light);
+
+  --color-bg-main: var(--nb-canvas);
+  --color-bg-card: var(--nb-card-bg);
+  --color-bg-subtle: var(--nb-canvas-alt);
+  --color-border: var(--nb-border-color);
+  --color-border-focus: var(--nb-border-color);
+
+  --color-text-main: var(--nb-black);
+  --color-text-secondary: #374151;
+  --color-text-muted: #6b7280;
+  --color-text-inverse: #ffffff;
+
+  --color-success: #15803d;
+  --color-success-bg: var(--nb-green-light);
+  --color-warning: #b45309;
+  --color-warning-bg: var(--nb-yellow-light);
+  --color-danger: #b91c1c;
+  --color-danger-bg: var(--nb-red-light);
+  --color-info: #0369a1;
+  --color-info-bg: var(--nb-blue-light);
+
+  --shadow-card: var(--shadow-md);
+  --shadow-float: var(--shadow-lg);
+}
+
+/* Dark Theme - Neo-Brutalist Cyber Obsidian with Crisp White/Neon Offsets */
+[data-theme="dark"] {
+  --theme-mode: 'dark';
+
+  --nb-black: #ffffff;
+  --nb-white: #1a1c23;
+  --nb-canvas: #0e0f12;
+  --nb-canvas-alt: #15171e;
+  --nb-card-bg: #1a1c23;
+
+  --nb-border-color: #ffffff;
+  --nb-shadow-color: #ffffff;
+
+  /* Accents adjusted for dark readability */
+  --nb-green: #4ade80;
+  --nb-green-bright: #22c55e;
+  --nb-green-light: #064e3b;
+  --nb-green-subtle: #022c22;
+
+  --nb-yellow: #facc15;
+  --nb-yellow-bright: #fde047;
+  --nb-yellow-light: #3d2c00;
+  --nb-yellow-subtle: #241a00;
+
+  --nb-orange: #fb923c;
+  --nb-orange-bright: #f97316;
+  --nb-orange-light: #431407;
+  --nb-orange-subtle: #270c04;
+
+  --nb-blue: #38bdf8;
+  --nb-blue-bright: #0ea5e9;
+  --nb-blue-light: #082f49;
+  --nb-blue-subtle: #031d2e;
+
+  --nb-red: #f87171;
+  --nb-red-bright: #ef4444;
+  --nb-red-light: #450a0a;
+  --nb-red-subtle: #280505;
+
+  --nb-purple: #a78bfa;
+  --nb-purple-light: #2e1065;
+
+  /* Semantic Compatibility */
+  --color-primary-darker: #ffffff;
+  --color-primary-dark: #4ade80;
+  --color-primary: #22c55e;
+  --color-primary-light: #86efac;
+  --color-primary-subtle: var(--nb-green-light);
+  --color-primary-faint: var(--nb-green-subtle);
+
+  --color-earth-dark: #ffffff;
+  --color-earth: #fb923c;
+  --color-earth-light: #fed7aa;
+  --color-earth-subtle: var(--nb-orange-light);
+
+  --color-gold-dark: #fde047;
+  --color-gold: #facc15;
+  --color-gold-bright: #fde047;
+  --color-gold-subtle: var(--nb-yellow-light);
+
+  --color-bg-main: var(--nb-canvas);
+  --color-bg-card: var(--nb-card-bg);
+  --color-bg-subtle: var(--nb-canvas-alt);
+  --color-border: var(--nb-border-color);
+  --color-border-focus: var(--nb-border-color);
+
+  --color-text-main: #ffffff;
+  --color-text-secondary: #e5e7eb;
+  --color-text-muted: #9ca3af;
+  --color-text-inverse: #000000;
+
+  --color-success: #4ade80;
+  --color-success-bg: var(--nb-green-light);
+  --color-warning: #facc15;
+  --color-warning-bg: var(--nb-yellow-light);
+  --color-danger: #f87171;
+  --color-danger-bg: var(--nb-red-light);
+  --color-info: #38bdf8;
+  --color-info-bg: var(--nb-blue-light);
+
+  --shadow-card: var(--shadow-md);
+  --shadow-float: var(--shadow-lg);
+}
