@@ -55,15 +55,15 @@ export const GlobalSearch = () => {
   const hasResults = results.schemes.length > 0 || results.knowledge.length > 0 || results.listings.length > 0;
 
   return (
-    <div ref={searchRef} style={{ position: 'relative', width: '100%', maxWidth: '400px' }}>
+    <div ref={searchRef} style={{ position: 'relative', width: '100%', maxWidth: '520px' }}>
       <div
         style={{
           display: 'flex',
           alignItems: 'center',
           backgroundColor: 'var(--nb-white)',
           border: 'var(--border-medium)',
-          borderRadius: 'var(--radius-sm)',
-          padding: '6px 14px',
+          borderRadius: '10px',
+          padding: '7px 14px',
           boxShadow: 'var(--shadow-sm)',
           transition: 'all 0.15s ease'
         }}
