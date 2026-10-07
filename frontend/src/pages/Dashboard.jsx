@@ -261,22 +261,40 @@ export const Dashboard = () => {
             </span>
           </div>
 
-          <button
-            onClick={fetchWeather}
-            disabled={loadingWeather}
-            className="btn btn-secondary btn-sm"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '6px',
-              padding: '4px 10px',
-              fontSize: '0.8rem'
-            }}
-            title={t('dashboard.refreshWeather')}
-          >
-            <RefreshCw size={14} strokeWidth={2.5} className={loadingWeather ? 'spin' : ''} />
-            <span>{t('dashboard.refreshWeather')}</span>
-          </button>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <Link
+              to="/weather"
+              className="btn btn-primary btn-sm"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                padding: '4px 12px',
+                fontSize: '0.82rem',
+                textDecoration: 'none'
+              }}
+            >
+              <span>{lang === 'hi' ? 'स्मार्ट वेदर' : 'Farm Intelligence'}</span>
+              <ArrowRight size={14} strokeWidth={2.5} />
+            </Link>
+
+            <button
+              onClick={fetchWeather}
+              disabled={loadingWeather}
+              className="btn btn-secondary btn-sm"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                padding: '4px 10px',
+                fontSize: '0.8rem'
+              }}
+              title={t('dashboard.refreshWeather')}
+            >
+              <RefreshCw size={14} strokeWidth={2.5} className={loadingWeather ? 'spin' : ''} />
+              <span>{t('dashboard.refreshWeather')}</span>
+            </button>
+          </div>
         </div>
 
         {loadingWeather ? (
@@ -518,6 +536,79 @@ export const Dashboard = () => {
                     );
                   })}
                 </div>
+              </div>
+            )}
+
+            {/* Farm Intelligence Summary Callout */}
+            {weatherData.farmIntelligence && (
+              <div
+                style={{
+                  marginTop: 'var(--space-md)',
+                  padding: '12px 16px',
+                  backgroundColor: 'var(--nb-green-subtle)',
+                  border: 'var(--border-medium)',
+                  borderRadius: 'var(--radius-sm)',
+                  boxShadow: 'var(--shadow-sm)',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  flexWrap: 'wrap',
+                  gap: '12px'
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <span style={{ fontSize: '0.82rem', fontWeight: '800', color: 'var(--nb-black)' }}>
+                      💧 {lang === 'hi' ? 'सिंचाई:' : 'Irrigation:'}
+                    </span>
+                    <span
+                      style={{
+                        padding: '2px 8px',
+                        borderRadius: 'var(--radius-sm)',
+                        border: '1.5px solid #000',
+                        fontSize: '0.78rem',
+                        fontWeight: '800',
+                        backgroundColor: weatherData.farmIntelligence.irrigation?.status === 'irrigate_now' ? 'var(--nb-green-light)' : weatherData.farmIntelligence.irrigation?.status === 'skip' ? 'var(--nb-red-light)' : 'var(--nb-yellow-light)'
+                      }}
+                    >
+                      {lang === 'hi' ? weatherData.farmIntelligence.irrigation?.windowHi : weatherData.farmIntelligence.irrigation?.windowEn}
+                    </span>
+                  </div>
+
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <span style={{ fontSize: '0.82rem', fontWeight: '800', color: 'var(--nb-black)' }}>
+                      🌾 {lang === 'hi' ? 'खेत जोखिम:' : 'Farm Risk:'}
+                    </span>
+                    <span
+                      style={{
+                        padding: '2px 8px',
+                        borderRadius: 'var(--radius-sm)',
+                        border: '1.5px solid #000',
+                        fontSize: '0.78rem',
+                        fontWeight: '800',
+                        backgroundColor: 'var(--nb-white)'
+                      }}
+                    >
+                      {weatherData.farmIntelligence.riskScore?.overall}/100 ({lang === 'hi' ? weatherData.farmIntelligence.riskScore?.labelHi : weatherData.farmIntelligence.riskScore?.labelEn})
+                    </span>
+                  </div>
+                </div>
+
+                <Link
+                  to="/weather"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    fontWeight: '800',
+                    fontSize: '0.85rem',
+                    color: 'var(--nb-black)',
+                    textDecoration: 'underline'
+                  }}
+                >
+                  <span>{lang === 'hi' ? '24 घंटे का क्लॉक व AI सलाहकार खोलें' : 'View 24h Clock & AI Advisor'}</span>
+                  <ArrowRight size={15} strokeWidth={2.5} />
+                </Link>
               </div>
             )}
           </div>

@@ -13,6 +13,7 @@ import {
   BookOpen,
   UserCheck,
   MessageSquare,
+  CloudSun,
   X
 } from 'lucide-react';
 
@@ -28,6 +29,7 @@ export const MobileNav = () => {
   ];
 
   const moreItems = [
+    { to: '/weather', label: t('nav.weather'), icon: CloudSun },
     { to: '/samvaad', label: t('nav.samvaad'), icon: MessageSquare },
     { to: '/marketplace', label: t('nav.marketplace'), icon: ShoppingBag },
     { to: '/insurance', label: t('nav.insurance'), icon: ShieldCheck },

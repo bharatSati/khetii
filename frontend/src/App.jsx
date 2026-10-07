@@ -19,6 +19,7 @@ import Documents from './pages/Documents';
 import Knowledge from './pages/Knowledge';
 import Samvaad from './pages/Samvaad';
 import Profile from './pages/Profile';
+import Weather from './pages/Weather';
 
 // Protected Route Guard
 const ProtectedRoute = ({ children }) => {
@@ -50,6 +51,7 @@ export const App = () => {
               <Route path="/" element={<Landing />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/weather" element={<Weather />} />
               <Route path="/schemes" element={<Schemes />} />
               <Route path="/insurance" element={<Insurance />} />
               <Route path="/market" element={<Market />} />

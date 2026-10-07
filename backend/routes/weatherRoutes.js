@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
-const { getWeather } = require('../controllers/weatherController');
+const { getWeather, getAiBriefing, askAdvisor } = require('../controllers/weatherController');
 
 // Optional auth: attaches req.user if token exists, otherwise proceeds with default coords
 const optionalAuth = async (req, res, next) => {
@@ -21,5 +21,7 @@ const optionalAuth = async (req, res, next) => {
 };
 
 router.get('/', optionalAuth, getWeather);
+router.get('/ai-brief', optionalAuth, getAiBriefing);
+router.post('/ask', optionalAuth, askAdvisor);
 
 module.exports = router;

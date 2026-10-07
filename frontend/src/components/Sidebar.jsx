@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import {
   LayoutDashboard,
+  CloudSun,
   Landmark,
   ShieldCheck,
   TrendingUp,
@@ -19,6 +20,7 @@ export const Sidebar = () => {
 
   const navItems = [
     { to: '/dashboard', label: t('nav.dashboard'), icon: LayoutDashboard },
+    { to: '/weather', label: t('nav.weather'), icon: CloudSun },
     { to: '/samvaad', label: t('nav.samvaad'), icon: MessageSquare },
     { to: '/schemes', label: t('nav.schemes'), icon: Landmark },
     { to: '/insurance', label: t('nav.insurance'), icon: ShieldCheck },
