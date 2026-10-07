@@ -130,7 +130,18 @@
     "benefits": "Benefits & Subsidies",
     "documents": "Required Documents",
     "howToApply": "How to Apply",
-    "disclaimer": "Always check the official website for the latest rules, quotas, and notifications."
+    "disclaimer": "Always check the official website for the latest rules, quotas, and notifications.",
+    "askAiTitle": "Ask Khetii AI about this Scheme",
+    "askAiSubtitle": "Ask in your voice or type any question regarding eligibility, documents, or application.",
+    "askAiPlaceholder": "Ask a question e.g. 'Can I apply if I have 2 acres?' or 'Documents needed?'...",
+    "askAiButton": "Ask AI",
+    "askAiListening": "Listening...",
+    "askAiVoiceBtn": "Voice",
+    "askAiKeyPoints": "Key Action Points",
+    "askAiQuickEligible": "Am I eligible?",
+    "askAiQuickDocs": "Required documents?",
+    "askAiQuickApply": "How to apply?",
+    "askAiQuickBenefits": "Benefits & Subsidy amount?"
   },
   "insurance": {
     "title": "PMFBY Crop Insurance Guide",

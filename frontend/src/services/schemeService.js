@@ -9,5 +9,15 @@ export const schemeService = {
   getSchemeById: async (id) => {
     const response = await api.get(`/schemes/${id}`);
     return response.data;
+  },
+
+  askSchemeAI: async ({ schemeId, question, lang, schemeData }) => {
+    const response = await api.post('/schemes/ask-ai', {
+      schemeId,
+      question,
+      lang,
+      schemeData
+    });
+    return response.data;
   }
 };

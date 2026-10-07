@@ -65,7 +65,42 @@ const getSchemeById = async (req, res, next) => {
   }
 };
 
+const { askSchemeGroqAI } = require('../services/groqSchemeService');
+
+// @desc Ask Groq AI about a government scheme
+// @route POST /api/schemes/ask-ai
+const askSchemeAI = async (req, res, next) => {
+  try {
+    const { schemeId, question, lang, schemeData } = req.body;
+
+    if (!question || !question.trim()) {
+      return res.status(400).json({ message: 'Question is required.' });
+    }
+
+    let scheme = schemeData;
+    if (!scheme && schemeId) {
+      const schemes = loadSchemesData();
+      scheme = schemes.find((s) => s.id === schemeId);
+    }
+
+    if (!scheme) {
+      return res.status(404).json({ message: 'Government scheme not found.' });
+    }
+
+    const aiResponse = await askSchemeGroqAI({
+      scheme,
+      question: question.trim(),
+      lang: lang || req.user?.language || 'hi'
+    });
+
+    res.json(aiResponse);
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   getSchemes,
-  getSchemeById
+  getSchemeById,
+  askSchemeAI
 };
