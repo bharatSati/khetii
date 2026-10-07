@@ -30,12 +30,17 @@ const searchAdvisories = async (req, res, next) => {
       limit
     });
 
-    // Generate AI interpretation / summary if requested and results exist
+    // Generate AI interpretation / summary if requested (works for both matches and zero-result fallbacks)
     let aiSummary = null;
-    if (aiExplain && searchResult.results && searchResult.results.length > 0) {
+    if (aiExplain && (query || (searchResult.results && searchResult.results.length > 0))) {
       aiSummary = await summarizeKccAdvisories({
         query: query || `${searchResult.detectedCrop} ${searchResult.detectedCategory}`,
         results: searchResult.results,
+        matchAccuracy: searchResult.matchAccuracy,
+        isAvailableInKcc: searchResult.isAvailableInKcc,
+        detectedLanguage: searchResult.detectedLanguage,
+        detectedCrop: searchResult.detectedCrop,
+        detectedCategory: searchResult.detectedCategory,
         lang
       });
     }
@@ -43,8 +48,13 @@ const searchAdvisories = async (req, res, next) => {
     res.json({
       success: true,
       query: searchResult.query,
+      detectedLanguage: searchResult.detectedLanguage,
       detectedCrop: searchResult.detectedCrop,
       detectedCategory: searchResult.detectedCategory,
+      extractedKeywords: searchResult.extractedKeywords || [],
+      matchAccuracy: searchResult.matchAccuracy,
+      isAvailableInKcc: searchResult.isAvailableInKcc,
+      matchQuality: searchResult.matchQuality,
       totalMatches: searchResult.totalMatches,
       results: searchResult.results,
       aiSummary,

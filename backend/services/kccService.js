@@ -2,6 +2,11 @@ const fs = require('fs');
 const path = require('path');
 const { isGroqConfigured } = require('./groqWeatherService');
 const Groq = require('groq-sdk');
+const {
+  extractKeywordsWithAI,
+  synthesizeAdvisoryInUserLanguage,
+  detectLanguageStyle
+} = require('./geminiService');
 
 const CSV_FILE_PATH = path.join(__dirname, '..', 'data', 'raw_kcc.csv');
 
@@ -72,62 +77,140 @@ const CATEGORY_DEFINITIONS = [
 ];
 
 // Common stopwords to exclude from word index
+// Common stopwords to exclude from word index & search matching
 const STOPWORDS = new Set([
   'the', 'and', 'for', 'about', 'him', 'her', 'his', 'asking', 'suggested',
   'advised', 'recommended', 'control', 'measure', 'applied', 'with', 'per',
   'litre', 'water', 'that', 'has', 'not', 'got', 'proper', 'from', 'also',
   'solution', 'gram', 'dose', 'what', 'should', 'how', 'when', 'which', 'are',
-  'this', 'was', 'were', 'have', 'been', 'will', 'problem', 'crops', 'plant'
+  'this', 'was', 'were', 'have', 'been', 'will', 'problem', 'crops', 'plant',
+  // Conversational Hindi / Hinglish filler words
+  'bhai', 'mere', 'meri', 'mera', 'apne', 'kya', 'kaise', 'kaun', 'sa', 'si',
+  'kare', 'karein', 'karo', 'hoga', 'hogi', 'raha', 'rahi', 'rahe', 'hai',
+  'hain', 'tha', 'thi', 'the', 'mein', 'me', 'se', 'ko', 'ka', 'ki', 'ke',
+  'batao', 'bataye', 'batayein', 'daalu', 'daalein', 'daal', 'lag', 'gaya',
+  'gayi', 'gaye', 'niche', 'upar', 'bahut', 'jyada', 'kam', 'sir', 'madam',
+  'ped', 'paudha', 'paudhe', 'buy', 'sell', 'purchase', 'mujhe', 'humko',
+  'chahiye', 'karna'
 ]);
 
-// Hindi to English translation map for semantic query understanding
+// Hindi & Hinglish to English translation map for semantic query understanding
 const HINDI_SYNONYM_MAP = {
+  // Crops (Devanagari & Hinglish)
   'टमाटर': 'tomato',
+  'tamatar': 'tomato',
   'आलू': 'potato',
+  'aloo': 'potato',
+  'alu': 'potato',
   'सरसों': 'mustard',
+  'sarson': 'mustard',
   'राई': 'mustard',
+  'rai': 'mustard',
   'धान': 'rice paddy',
+  'dhan': 'rice paddy',
   'चावल': 'rice paddy',
+  'chawal': 'rice paddy',
   'गेहूं': 'wheat',
+  'gehu': 'wheat',
+  'gehoon': 'wheat',
   'मिर्च': 'chilli',
+  'mirch': 'chilli',
+  'mirchi': 'chilli',
   'बैंगन': 'brinjal',
+  'baingan': 'brinjal',
   'प्याज': 'onion',
+  'pyaj': 'onion',
+  'pyaz': 'onion',
   'लहसुन': 'garlic',
+  'lahsun': 'garlic',
   'केला': 'banana',
+  'kela': 'banana',
   'नारियल': 'coconut',
+  'nariyal': 'coconut',
   'मक्का': 'maize',
+  'makka': 'maize',
+  'bhutta': 'maize',
   'कपास': 'cotton',
+  'kapas': 'cotton',
   'गाय': 'cow cattle dairy',
+  'gaay': 'cow cattle',
   'भैंस': 'cow cattle buffalo',
+  'bhains': 'cow buffalo',
   'पशु': 'cow cattle',
+  'pashu': 'cattle animal',
   'मछली': 'fish fingerling',
+  'machli': 'fish',
   'चना': 'gram',
+  'chana': 'gram',
+
+  // Pests & Diseases (Devanagari & Hinglish)
   'माहू': 'aphid',
+  'mahu': 'aphid',
   'चेपा': 'aphid',
+  'chepa': 'aphid',
   'झुलसा': 'blight',
+  'jhulsa': 'blight',
   'पीला': 'yellow',
+  'pila': 'yellow',
   'पीले': 'yellow',
+  'peele': 'yellow',
   'पीली': 'yellow',
+  'pili': 'yellow',
+  'peeli': 'yellow',
   'पत्ते': 'leaf leaves',
+  'patte': 'leaf leaves',
   'पत्ती': 'leaf leaves',
+  'patti': 'leaf leaves',
   'पत्तियों': 'leaf leaves',
+  'pattiyan': 'leaf leaves',
   'कीड़ा': 'pest borer insect',
+  'keeda': 'pest borer insect',
+  'kida': 'pest insect',
   'कीट': 'pest borer insect',
+  'kit': 'pest insect',
+  'इल्ली': 'caterpillar borer',
+  'illi': 'caterpillar borer',
   'तना': 'shoot stem',
+  'tana': 'stem shoot',
   'छेदक': 'borer',
+  'chedak': 'borer',
   'सड़न': 'rot',
+  'sadan': 'rot',
   'उकठा': 'wilt',
+  'uktha': 'wilt',
+  'सूख': 'drying wilt',
+  'sukh': 'drying wilt',
+  'मरोड़िया': 'curl',
+  'mud': 'curl',
+  'mudna': 'curl',
   'फफूंद': 'fungus fungal',
+  'fafund': 'fungus',
+  'धब्बा': 'leaf spot',
+  'dhabba': 'leaf spot',
   'खाद': 'fertilizer urea',
+  'khad': 'fertilizer',
   'उर्वरक': 'fertilizer',
+  'urvarak': 'fertilizer',
   'सिंचाई': 'irrigation water',
+  'sinchai': 'irrigation',
   'पानी': 'irrigation water',
+  'paani': 'irrigation water',
+  'pani': 'irrigation water',
   'दवा': 'spray medicine',
+  'dawa': 'spray medicine',
+  'दवाई': 'spray medicine',
+  'dawai': 'spray medicine',
   'छिड़काव': 'spray',
+  'chhidkaav': 'spray',
   'फल': 'fruit',
+  'phal': 'fruit',
   'फूल': 'flower',
+  'phool': 'flower',
   'झड़ना': 'drop falling',
-  'गिरना': 'drop falling'
+  'jhadna': 'drop falling',
+  'गिरना': 'drop falling',
+  'girna': 'drop falling',
+  'gir': 'drop falling'
 };
 
 // In-memory state
@@ -385,9 +468,30 @@ const searchKCC = async ({
     return cached.data;
   }
 
+  // 1. AI Semantic Keyword & Intent Extraction (Gemini / Groq / Rule fallback)
+  let aiExtracted = {
+    detectedLanguage: detectLanguageStyle(cleanQuery),
+    detectedCrop: null,
+    detectedCategory: null,
+    symptoms: [],
+    searchKeywords: []
+  };
+
+  if (cleanQuery) {
+    try {
+      aiExtracted = await extractKeywordsWithAI(cleanQuery);
+    } catch (err) {
+      console.warn('[KCC Service] Keyword extraction error:', err.message);
+    }
+  }
+
   const { expanded, tokens } = normalizeFarmerQuery(cleanQuery);
-  const detectedCrop = crop || detectCropFromText(expanded);
-  const detectedCategory = category || detectCategoryFromText(expanded);
+  const detectedCrop = crop || aiExtracted.detectedCrop || detectCropFromText(expanded);
+  const detectedCategory = category || aiExtracted.detectedCategory || detectCategoryFromText(expanded);
+
+  // Combine query tokens with AI semantic search keywords & symptoms
+  const aiTokens = (aiExtracted.searchKeywords || []).map((k) => k.toLowerCase().trim()).filter(Boolean);
+  const combinedTokens = [...new Set([...tokens, ...aiTokens])];
 
   // Candidate scoring map: docId -> score
   const candidateScores = new Map();
@@ -413,7 +517,7 @@ const searchKCC = async ({
   }
 
   // Token matching across inverted index
-  for (const token of tokens) {
+  for (const token of combinedTokens) {
     const docIds = invertedIndex.get(token) || [];
     const tokenWeight = token.length >= 5 ? 1.5 : 1.0;
 
@@ -437,7 +541,7 @@ const searchKCC = async ({
 
   // Calculate final ranking scores
   const scoredResults = [];
-  const maxPossibleTokens = Math.max(tokens.length, 1);
+  const maxPossibleTokens = Math.max(combinedTokens.length, 1);
 
   for (const [id, matchScore] of candidateScores.entries()) {
     const rec = records[id];
@@ -494,10 +598,31 @@ const searchKCC = async ({
 
   const topResults = scoredResults.slice(0, limit);
 
+  // Calculate match accuracy and availability
+  let matchAccuracy = 0;
+  let isAvailableInKcc = false;
+  let matchQuality = 'none';
+
+  if (topResults.length > 0) {
+    matchAccuracy = Math.round(topResults[0].relevanceScore * 100);
+    if (matchAccuracy >= 50) {
+      isAvailableInKcc = true;
+      matchQuality = matchAccuracy >= 70 ? 'high' : 'moderate';
+    } else {
+      isAvailableInKcc = false;
+      matchQuality = 'low';
+    }
+  }
+
   const responseData = {
     query: cleanQuery,
+    detectedLanguage: aiExtracted.detectedLanguage || detectLanguageStyle(cleanQuery),
     detectedCrop: detectedCrop !== 'General Crop' ? detectedCrop : (crop || 'General'),
     detectedCategory: detectedCategory !== 'General Agriculture Advisory' ? detectedCategory : (category || 'General'),
+    extractedKeywords: aiExtracted.searchKeywords || [],
+    matchAccuracy,
+    isAvailableInKcc,
+    matchQuality,
     totalMatches: scoredResults.length,
     results: topResults,
     message:
@@ -513,96 +638,28 @@ const searchKCC = async ({
 };
 
 /**
- * Synthesize AI Explanation using existing Groq integration (or deterministic fallback)
+ * Synthesize AI Explanation in the exact language the user asked in (Hinglish / Hindi / English)
+ * via Gemini (or Groq / deterministic fallback), clearly explaining KCC match accuracy.
  */
-const summarizeKccAdvisories = async ({ query, results = [], lang = 'hi' }) => {
-  const isHindi = lang.startsWith('hi');
-
-  if (!results || results.length === 0) {
-    return {
-      explanation: isHindi
-        ? 'इस प्रश्न के लिए कोई सीधा केसीसी ऐतिहासिक रिकॉर्ड नहीं मिला। आप किसान कॉल सेंटर के टोल-फ्री नंबर 1800-180-1551 पर विशेषज्ञ से संपर्क कर सकते हैं।'
-        : 'No specific Kisan Call Centre historical record found for this query. You may contact the official Kisan Call Centre toll-free at 1800-180-1551.',
-      actionSteps: [],
-      sourceNote: isHindi ? 'किसान कॉल सेंटर (भारत सरकार)' : 'Kisan Call Centre (Govt of India)',
-      disclaimer: isHindi
-        ? 'यह परामर्श ऐतिहासिक केसीसी रिकॉर्ड पर आधारित है। अंतिम उपयोग से पहले अपने स्थानीय कृषि विस्तार अधिकारी या केवीके से खुराक सत्यापित करें।'
-        : 'This advisory is derived from historical Kisan Call Centre records. Always verify exact chemical doses with your local Krishi Vigyan Kendra.'
-    };
-  }
-
-  // If Groq is not configured, generate deterministic agronomist synthesis
-  const generateDeterministicSummary = () => {
-    const top = results[0];
-    const second = results[1];
-
-    const actions = [];
-    if (top?.answer) actions.push(top.answer);
-    if (second?.answer && second.answer !== top.answer) actions.push(second.answer);
-
-    const explanation = isHindi
-      ? `किसान कॉल सेंटर (KCC) के सत्यापित आंकड़ों के अनुसार, इस समस्या के लिए अनुशंसित समाधान: "${top.answer}" है। ${second ? 'अतिरिक्त परामर्श: ' + second.answer : ''}`
-      : `According to verified Kisan Call Centre records, the primary recommended action is: "${top.answer}". ${second ? 'Supplementary advisory: ' + second.answer : ''}`;
-
-    return {
-      explanation,
-      actionSteps: actions,
-      sourceNote: isHindi ? 'किसान कॉल सेंटर (भारत सरकार) ऐतिहासिक डेटाबेस' : 'Kisan Call Centre (Govt of India) Historical Dataset',
-      disclaimer: isHindi
-        ? 'यह परामर्श ऐतिहासिक केसीसी कॉल रिकॉर्ड्स से संकलित है। रासायनिक दवाओं का छिड़काव अनुशंसित मात्रा में और सुरक्षात्मक साधनों के साथ ही करें।'
-        : 'Advisory compiled from historical KCC call records. Apply agrochemicals only in recommended doses using protective gear.'
-    };
-  };
-
-  if (!isGroqConfigured()) {
-    return generateDeterministicSummary();
-  }
-
-  try {
-    const groq = new Groq({ apiKey: process.env.GROQ_API_KEY.trim() });
-    const model = process.env.GROQ_MODEL || 'llama-3.3-70b-versatile';
-
-    const kccContext = results.slice(0, 4).map((r, i) => `${i + 1}. [${r.crop} - ${r.category}] Q: ${r.question} | Advisory: ${r.answer}`).join('\n');
-
-    const prompt = `You are Khetii's Senior Agronomist summarizing official Kisan Call Centre (KCC) farmer advisories.
-Farmer Query: "${query}"
-
-RETRIEVED AUTHENTIC KCC ADVISORIES:
-${kccContext}
-
-INSTRUCTIONS:
-1. Synthesize a practical, empathetic, and clear agricultural action plan based STRICTLY on the KCC advisories provided above.
-2. DO NOT hallucinate chemicals, dosages, or practices not supported by the KCC data.
-3. Respond in ${isHindi ? 'clear Hindi (Devanagari script)' : 'simple, friendly English'}.
-4. Respond in valid JSON matching:
-{
-  "explanation": "2-3 sentences explaining the diagnosis and recommended KCC remedy in simple farmer terms",
-  "actionSteps": ["Action step 1 with dose & timing", "Action step 2 (preventive/cultural)"],
-  "sourceNote": "Synthesized from Kisan Call Centre dataset",
-  "disclaimer": "Agricultural advisory derived from historical KCC records; verify local conditions with your KVK."
-}`;
-
-    const completion = await groq.chat.completions.create({
-      model,
-      messages: [
-        { role: 'system', content: 'You are Khetii AI Senior Agricultural Advisor. Respond only in JSON.' },
-        { role: 'user', content: prompt }
-      ],
-      response_format: { type: 'json_object' },
-      temperature: 0.2,
-      max_tokens: 600
-    });
-
-    const parsed = JSON.parse(completion.choices[0]?.message?.content);
-    if (parsed && parsed.explanation && Array.isArray(parsed.actionSteps)) {
-      return parsed;
-    }
-
-    return generateDeterministicSummary();
-  } catch (err) {
-    console.warn('[KCC Service] Groq AI synthesis error (using deterministic fallback):', err.message);
-    return generateDeterministicSummary();
-  }
+const summarizeKccAdvisories = async ({
+  query,
+  results = [],
+  matchAccuracy = 0,
+  isAvailableInKcc = true,
+  detectedLanguage = 'hinglish',
+  detectedCrop = null,
+  detectedCategory = null,
+  lang = 'hi'
+}) => {
+  return synthesizeAdvisoryInUserLanguage({
+    rawQuery: query,
+    detectedLanguage: detectedLanguage || detectLanguageStyle(query),
+    results,
+    matchAccuracy,
+    isAvailableInKcc,
+    detectedCrop,
+    detectedCategory
+  });
 };
 
 /**

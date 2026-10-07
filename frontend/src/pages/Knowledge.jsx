@@ -557,39 +557,74 @@ export const Knowledge = () => {
             </div>
           )}
 
-          {/* AI Agronomist Synthesis Banner (When results found) */}
+          {/* AI Agronomist Synthesis Banner */}
           {kccAiSummary && !kccLoading && (
             <div
               className="card"
               style={{
                 marginBottom: 'var(--space-xl)',
-                backgroundColor: 'var(--nb-green-subtle)',
+                backgroundColor: kccAiSummary.isAvailableInKcc ? 'var(--nb-green-subtle)' : '#fffbeb',
                 border: 'var(--border-thick)',
                 borderRadius: 'var(--radius-md)',
                 boxShadow: 'var(--shadow-md)',
                 padding: 'var(--space-lg)'
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px', flexWrap: 'wrap', gap: '8px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px', flexWrap: 'wrap', gap: '8px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <Sparkles size={22} strokeWidth={2.5} style={{ color: '#15803d' }} />
+                  <Sparkles size={22} strokeWidth={2.5} style={{ color: kccAiSummary.isAvailableInKcc ? '#15803d' : '#d97706' }} />
                   <h3 style={{ fontSize: '1.2rem', fontWeight: '900', color: 'var(--nb-black)' }}>
                     {t('knowledge.kccAiSummaryTitle')}
                   </h3>
                 </div>
-                <span
-                  style={{
-                    backgroundColor: 'var(--nb-white)',
-                    border: '1.5px solid #000',
-                    borderRadius: 'var(--radius-sm)',
-                    padding: '2px 8px',
-                    fontSize: '0.75rem',
-                    fontWeight: '800',
-                    color: '#166534'
-                  }}
-                >
-                  {kccAiSummary.sourceNote}
-                </span>
+
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                  {/* Language Style Pill */}
+                  {kccAiSummary.languageStyle && (
+                    <span
+                      style={{
+                        backgroundColor: 'var(--nb-white)',
+                        border: '1.5px solid #000',
+                        borderRadius: 'var(--radius-sm)',
+                        padding: '2px 8px',
+                        fontSize: '0.75rem',
+                        fontWeight: '800',
+                        color: 'var(--nb-black)'
+                      }}
+                    >
+                      💬 {kccAiSummary.languageStyle === 'hinglish' ? 'Hinglish' : kccAiSummary.languageStyle === 'hindi' ? 'हिंदी (Hindi)' : 'English'}
+                    </span>
+                  )}
+
+                  {/* Match Accuracy Pill */}
+                  <span
+                    style={{
+                      backgroundColor: kccAiSummary.isAvailableInKcc ? '#ecfdf5' : '#fef2f2',
+                      border: '1.5px solid #000',
+                      borderRadius: 'var(--radius-sm)',
+                      padding: '2px 8px',
+                      fontSize: '0.75rem',
+                      fontWeight: '900',
+                      color: kccAiSummary.isAvailableInKcc ? '#166534' : '#991b1b'
+                    }}
+                  >
+                    {kccAiSummary.matchNote || (kccAiSummary.isAvailableInKcc ? `🎯 KCC Match: ${kccAiSummary.matchAccuracy}%` : `⚠️ KCC Match: ${kccAiSummary.matchAccuracy}%`)}
+                  </span>
+
+                  <span
+                    style={{
+                      backgroundColor: 'var(--nb-white)',
+                      border: '1.5px solid #000',
+                      borderRadius: 'var(--radius-sm)',
+                      padding: '2px 8px',
+                      fontSize: '0.75rem',
+                      fontWeight: '800',
+                      color: '#166534'
+                    }}
+                  >
+                    {kccAiSummary.sourceNote}
+                  </span>
+                </div>
               </div>
 
               <p style={{ fontSize: '1.02rem', fontWeight: '800', color: 'var(--nb-black)', lineHeight: 1.5, marginBottom: '12px' }}>
@@ -598,7 +633,7 @@ export const Knowledge = () => {
 
               {kccAiSummary.actionSteps && kccAiSummary.actionSteps.length > 0 && (
                 <div style={{ marginTop: '10px' }}>
-                  <div style={{ fontSize: '0.82rem', fontWeight: '900', textTransform: 'uppercase', color: '#166534', marginBottom: '6px' }}>
+                  <div style={{ fontSize: '0.82rem', fontWeight: '900', textTransform: 'uppercase', color: kccAiSummary.isAvailableInKcc ? '#166534' : '#92400e', marginBottom: '6px' }}>
                     📋 {t('knowledge.kccAiActionPlan')}
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
@@ -618,11 +653,34 @@ export const Knowledge = () => {
                           gap: '8px'
                         }}
                       >
-                        <span style={{ color: '#15803d' }}>✔</span>
+                        <span style={{ color: kccAiSummary.isAvailableInKcc ? '#15803d' : '#d97706' }}>✔</span>
                         <span>{step}</span>
                       </div>
                     ))}
                   </div>
+                </div>
+              )}
+
+              {/* If match is low / not in KCC, prominent Helpline prompt */}
+              {!kccAiSummary.isAvailableInKcc && (
+                <div
+                  style={{
+                    marginTop: '14px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '10px',
+                    padding: '8px 14px',
+                    backgroundColor: 'var(--nb-white)',
+                    border: '2px solid #000',
+                    borderRadius: 'var(--radius-sm)',
+                    boxShadow: 'var(--shadow-sm)',
+                    width: 'fit-content'
+                  }}
+                >
+                  <PhoneCall size={18} strokeWidth={2.5} style={{ color: '#16a34a' }} />
+                  <span style={{ fontSize: '0.9rem', fontWeight: '900', color: '#166534' }}>
+                    {t('knowledge.kccHelplineCall')}: 1800-180-1551
+                  </span>
                 </div>
               )}
 
