@@ -825,14 +825,14 @@ export const Dashboard = () => {
                 flexShrink: 0
               }}
             >
-              <FileScan size={22} strokeWidth={2.5} />
+              <Sparkles size={22} strokeWidth={2.5} />
             </div>
             <div>
               <div style={{ fontWeight: '900', fontSize: '0.95rem', color: 'var(--nb-black)' }}>
                 {t('dashboard.actionOcr')}
               </div>
               <div style={{ fontSize: '0.78rem', fontWeight: '700', color: 'var(--color-text-secondary)' }}>
-                कागज़ से टेक्स्ट
+                एआई जांच व टूल्स
               </div>
             </div>
           </Link>

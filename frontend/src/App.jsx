@@ -77,6 +77,7 @@ export const App = () => {
                 }
               />
               <Route path="/documents" element={<Documents />} />
+              <Route path="/services" element={<Documents />} />
               <Route
                 path="/profile"
                 element={

@@ -72,7 +72,7 @@ export const Landing = () => {
       accent: 'var(--nb-green-bright)'
     },
     {
-      icon: FileScan,
+      icon: Sparkles,
       title: t('nav.documents'),
       description: t('landing.featDocuments'),
       to: '/documents',

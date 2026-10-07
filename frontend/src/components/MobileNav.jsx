@@ -14,7 +14,8 @@ import {
   UserCheck,
   MessageSquare,
   CloudSun,
-  X
+  X,
+  Sparkles
 } from 'lucide-react';
 
 export const MobileNav = () => {
@@ -33,7 +34,7 @@ export const MobileNav = () => {
     { to: '/samvaad', label: t('nav.samvaad'), icon: MessageSquare },
     { to: '/marketplace', label: t('nav.marketplace'), icon: ShoppingBag },
     { to: '/insurance', label: t('nav.insurance'), icon: ShieldCheck },
-    { to: '/documents', label: t('nav.documents'), icon: FileScan },
+    { to: '/documents', label: t('nav.documents'), icon: Sparkles },
     { to: '/knowledge', label: t('nav.knowledge'), icon: BookOpen },
     { to: '/profile', label: t('nav.profile'), icon: UserCheck }
   ];

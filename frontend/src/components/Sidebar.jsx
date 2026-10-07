@@ -12,7 +12,8 @@ import {
   FileScan,
   BookOpen,
   UserCheck,
-  MessageSquare
+  MessageSquare,
+  Sparkles
 } from 'lucide-react';
 
 export const Sidebar = () => {
@@ -27,7 +28,7 @@ export const Sidebar = () => {
     { to: '/market', label: t('nav.market'), icon: TrendingUp },
     { to: '/marketplace', label: t('nav.marketplace'), icon: ShoppingBag },
     { to: '/finance', label: t('nav.finance'), icon: IndianRupee },
-    { to: '/documents', label: t('nav.documents'), icon: FileScan },
+    { to: '/documents', label: t('nav.documents'), icon: Sparkles },
     { to: '/knowledge', label: t('nav.knowledge'), icon: BookOpen },
     { to: '/profile', label: t('nav.profile'), icon: UserCheck }
   ];

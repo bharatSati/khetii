@@ -21,6 +21,7 @@ const searchRoutes = require('./routes/searchRoutes');
 const weatherRoutes = require('./routes/weatherRoutes');
 const postRoutes = require('./routes/postRoutes');
 const kccRoutes = require('./routes/kccRoutes');
+const digitalServicesRoutes = require('./routes/digitalServicesRoutes');
 
 const app = express();
 
@@ -31,8 +32,8 @@ app.use(
     credentials: true
   })
 );
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json({ limit: '25mb' }));
+app.use(express.urlencoded({ extended: true, limit: '25mb' }));
 
 // Health Check
 app.get('/api/health', (req, res) => {
@@ -51,6 +52,7 @@ app.use('/api/market', marketRoutes);
 app.use('/api/marketplace', marketplaceRoutes);
 app.use('/api/finance', financeRoutes);
 app.use('/api/ocr', ocrRoutes);
+app.use('/api/digital-services', digitalServicesRoutes);
 app.use('/api/knowledge', knowledgeRoutes);
 app.use('/api/kcc', kccRoutes);
 app.use('/api/search', searchRoutes);
