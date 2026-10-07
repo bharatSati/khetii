@@ -23,7 +23,8 @@ import {
   MapPin,
   RefreshCw,
   Sparkles,
-  MessageSquare
+  MessageSquare,
+  BookOpen
 } from 'lucide-react';
 import { financeService } from '../services/financeService';
 import { marketService } from '../services/marketService';
@@ -822,6 +823,47 @@ export const Dashboard = () => {
               </div>
               <div style={{ fontSize: '0.78rem', fontWeight: '700', color: 'var(--color-text-secondary)' }}>
                 कागज़ से टेक्स्ट
+              </div>
+            </div>
+          </Link>
+
+          <Link
+            to="/knowledge"
+            className="card card-hover"
+            style={{
+              textDecoration: 'none',
+              padding: '16px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px',
+              backgroundColor: 'var(--nb-orange-light)',
+              border: 'var(--border-medium)',
+              boxShadow: 'var(--shadow-md)'
+            }}
+          >
+            <div
+              style={{
+                width: '44px',
+                height: '44px',
+                borderRadius: 'var(--radius-sm)',
+                backgroundColor: 'var(--nb-white)',
+                border: 'var(--border-medium)',
+                boxShadow: 'var(--shadow-sm)',
+                color: 'var(--nb-black)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexShrink: 0
+              }}
+            >
+              <BookOpen size={22} strokeWidth={2.5} />
+            </div>
+            <div>
+              <div style={{ fontWeight: '900', fontSize: '0.95rem', color: 'var(--nb-black)' }}>
+                {lang === 'hi' ? 'KCC कृषि सलाह' : 'KCC Advisory'} 🏛️
+              </div>
+              <div style={{ fontSize: '0.78rem', fontWeight: '700', color: 'var(--color-text-secondary)' }}>
+                {lang === 'hi' ? '1.7 लाख+ सरकारी समाधान' : '1.7L+ verified advisories'}
               </div>
             </div>
           </Link>

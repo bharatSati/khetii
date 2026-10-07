@@ -1,6 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const Listing = require('../models/Listing');
+const { searchKCC } = require('../services/kccService');
 
 const schemesFilePath = path.join(__dirname, '..', 'data', 'schemes.json');
 const knowledgeFilePath = path.join(__dirname, '..', 'data', 'knowledge.json');
@@ -72,12 +73,22 @@ const globalSearch = async (req, res, next) => {
       console.error('Error searching listings:', e);
     }
 
+    // 4. Search Kisan Call Centre (KCC) advisories
+    let kcc = [];
+    try {
+      const kccData = await searchKCC({ query: q, limit: 3 });
+      kcc = kccData?.results || [];
+    } catch (e) {
+      console.warn('Error searching KCC in global search:', e.message);
+    }
+
     res.json({
       query: q,
-      totalResults: schemes.length + knowledge.length + listings.length,
+      totalResults: schemes.length + knowledge.length + listings.length + kcc.length,
       schemes,
       knowledge,
-      listings
+      listings,
+      kcc
     });
   } catch (error) {
     next(error);

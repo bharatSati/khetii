@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Search, X, BookOpen, Landmark, ShoppingBag, Loader2 } from 'lucide-react';
+import { Search, X, BookOpen, Landmark, ShoppingBag, Loader2, Sprout } from 'lucide-react';
 import { searchService } from '../services/searchService';
 
 export const GlobalSearch = () => {
   const [query, setQuery] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [results, setResults] = useState({ schemes: [], knowledge: [], listings: [] });
+  const [results, setResults] = useState({ schemes: [], knowledge: [], listings: [], kcc: [] });
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   const searchRef = useRef(null);
@@ -16,7 +16,7 @@ export const GlobalSearch = () => {
 
   useEffect(() => {
     if (!query.trim()) {
-      setResults({ schemes: [], knowledge: [], listings: [] });
+      setResults({ schemes: [], knowledge: [], listings: [], kcc: [] });
       return;
     }
 
@@ -52,7 +52,11 @@ export const GlobalSearch = () => {
     navigate(path);
   };
 
-  const hasResults = results.schemes.length > 0 || results.knowledge.length > 0 || results.listings.length > 0;
+  const hasResults =
+    (results.schemes && results.schemes.length > 0) ||
+    (results.knowledge && results.knowledge.length > 0) ||
+    (results.listings && results.listings.length > 0) ||
+    (results.kcc && results.kcc.length > 0);
 
   return (
     <div ref={searchRef} style={{ position: 'relative', width: '100%', maxWidth: '520px' }}>
@@ -282,6 +286,60 @@ export const GlobalSearch = () => {
                   </div>
                   <div style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)' }}>
                     📍 {l.location} • {l.category}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Kisan Call Centre (KCC) Advisories section */}
+          {results.kcc && results.kcc.length > 0 && (
+            <div style={{ marginTop: '14px' }}>
+              <div
+                style={{
+                  fontSize: '0.78rem',
+                  fontWeight: '900',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.6px',
+                  color: 'var(--nb-black)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  marginBottom: '8px',
+                  padding: '4px 8px',
+                  backgroundColor: 'var(--nb-green-light)',
+                  border: '1.5px solid #000'
+                }}
+              >
+                <Sprout size={15} strokeWidth={2.5} />
+                <span>{lang === 'hi' ? '🏛️ किसान कॉल सेंटर (KCC) समाधान' : '🏛️ KCC Advisories'}</span>
+              </div>
+              {results.kcc.map((kccItem) => (
+                <div
+                  key={kccItem.id}
+                  onClick={() => handleSelect(`/knowledge?kccQuery=${encodeURIComponent(kccItem.question)}`)}
+                  style={{
+                    padding: '8px 10px',
+                    borderRadius: 'var(--radius-sm)',
+                    cursor: 'pointer',
+                    fontSize: '0.9rem',
+                    marginBottom: '4px',
+                    border: '1.5px solid transparent'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = 'var(--nb-yellow-light)';
+                    e.currentTarget.style.borderColor = '#000';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = 'transparent';
+                    e.currentTarget.style.borderColor = 'transparent';
+                  }}
+                >
+                  <div style={{ fontWeight: '800', color: 'var(--nb-black)' }}>
+                    🌾 {kccItem.crop}: "{kccItem.question}"
+                  </div>
+                  <div style={{ fontSize: '0.78rem', color: '#166534', fontWeight: '700', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                    💡 {kccItem.answer}
                   </div>
                 </div>
               ))}
