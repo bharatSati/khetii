@@ -130,6 +130,7 @@ export const Marketplace = () => {
   useEffect(() => {
     try {
       localStorage.setItem('kheti_cart', JSON.stringify(cart));
+      window.dispatchEvent(new Event('kheti_cart_updated'));
     } catch (e) {}
   }, [cart]);
 
