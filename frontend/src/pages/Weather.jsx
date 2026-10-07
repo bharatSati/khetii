@@ -358,7 +358,7 @@ export const Weather = () => {
             <h1 style={{ fontSize: '2rem', fontWeight: '900', lineHeight: 1.15, color: 'var(--nb-black)' }}>
               {t('weather.pageTitle')} 🌾
             </h1>
-            <p style={{ fontSize: '0.95rem', fontWeight: '700', color: '#374151', marginTop: '6px', maxWidth: '720px' }}>
+            <p style={{ fontSize: '0.95rem', fontWeight: '700', color: 'var(--color-text-secondary)', marginTop: '6px', maxWidth: '720px' }}>
               {t('weather.pageSubtitle')}
             </p>
           </div>
@@ -408,7 +408,7 @@ export const Weather = () => {
           style={{
             marginTop: 'var(--space-md)',
             paddingTop: '12px',
-            borderTop: '2px dashed var(--nb-black)',
+            borderTop: '2px dashed var(--nb-border-color)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
@@ -425,16 +425,16 @@ export const Weather = () => {
                 backgroundColor: 'var(--nb-white)',
                 padding: '4px 10px',
                 borderRadius: 'var(--radius-sm)',
-                border: '1.5px solid #000',
+                border: '1.5px solid var(--nb-border-color)',
                 fontSize: '0.82rem',
                 fontWeight: '800'
               }}
             >
-              <MapPin size={15} strokeWidth={2.5} style={{ color: '#dc2626' }} />
+              <MapPin size={15} strokeWidth={2.5} style={{ color: 'var(--nb-red)' }} />
               <span>
                 {weatherData?.location?.district || weatherData?.location?.city || user?.district || user?.city || 'Delhi'}, {weatherData?.location?.state || user?.state || 'India'}
               </span>
-              <span style={{ fontSize: '0.75rem', color: '#6b7280' }}>
+              <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>
                 ({coords.lat.toFixed(2)}°N, {coords.lon.toFixed(2)}°E)
               </span>
             </div>
@@ -448,20 +448,20 @@ export const Weather = () => {
                 backgroundColor: 'var(--nb-white)',
                 padding: '4px 10px',
                 borderRadius: 'var(--radius-sm)',
-                border: '1.5px solid #000',
+                border: '1.5px solid var(--nb-border-color)',
                 fontSize: '0.82rem',
                 fontWeight: '800'
               }}
             >
-              <Wheat size={15} strokeWidth={2.5} style={{ color: '#15803d' }} />
+              <Wheat size={15} strokeWidth={2.5} style={{ color: 'var(--nb-green)' }} />
               <span>{t('weather.cropFilter')}:</span>
-              <span style={{ color: '#15803d' }}>
+              <span style={{ color: 'var(--nb-green)' }}>
                 {selectedCrops.length > 0 ? selectedCrops.join(', ') : (lang === 'hi' ? 'सामान्य फसलें' : 'General crops')}
               </span>
             </div>
           </div>
 
-          <div style={{ fontSize: '0.78rem', fontWeight: '800', color: '#4b5563' }}>
+          <div style={{ fontSize: '0.78rem', fontWeight: '800', color: 'var(--color-text-muted)' }}>
             🕒 {lang === 'hi' ? 'अपडेट:' : 'Updated:'} {new Date(weatherData?.updatedAt || Date.now()).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
           </div>
         </div>
@@ -964,14 +964,14 @@ export const Weather = () => {
               border: 'var(--border-thick)',
               borderRadius: 'var(--radius-md)',
               boxShadow: 'var(--shadow-md)',
-              backgroundColor: '#ecfdf5',
+              backgroundColor: 'var(--nb-green-light)',
               padding: 'var(--space-md)',
-              borderTop: '6px solid #16a34a'
+              borderTop: '6px solid var(--nb-green)'
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-              <CheckCircle2 size={22} strokeWidth={2.5} style={{ color: '#16a34a' }} />
-              <h3 style={{ fontSize: '1.1rem', fontWeight: '900', color: '#166534' }}>
+              <CheckCircle2 size={22} strokeWidth={2.5} style={{ color: 'var(--nb-green)' }} />
+              <h3 style={{ fontSize: '1.1rem', fontWeight: '900', color: 'var(--nb-green)' }}>
                 {t('weather.doNowTitle')}
               </h3>
             </div>
@@ -992,13 +992,13 @@ export const Weather = () => {
                     <div style={{ fontWeight: '900', fontSize: '0.92rem', color: 'var(--nb-black)' }}>
                       ✅ {lang === 'hi' ? item.titleHi : item.titleEn}
                     </div>
-                    <div style={{ fontSize: '0.8rem', fontWeight: '700', color: '#4b5563', marginTop: '4px' }}>
+                    <div style={{ fontSize: '0.8rem', fontWeight: '700', color: 'var(--color-text-secondary)', marginTop: '4px' }}>
                       {lang === 'hi' ? item.descHi : item.descEn}
                     </div>
                   </div>
                 ))
               ) : (
-                <div style={{ fontSize: '0.85rem', fontWeight: '700', color: '#4b5563' }}>
+                <div style={{ fontSize: '0.85rem', fontWeight: '700', color: 'var(--color-text-secondary)' }}>
                   {t('weather.allGood')}
                 </div>
               )}
@@ -1012,14 +1012,14 @@ export const Weather = () => {
               border: 'var(--border-thick)',
               borderRadius: 'var(--radius-md)',
               boxShadow: 'var(--shadow-md)',
-              backgroundColor: '#fef2f2',
+              backgroundColor: 'var(--nb-red-light)',
               padding: 'var(--space-md)',
-              borderTop: '6px solid #dc2626'
+              borderTop: '6px solid var(--nb-red)'
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-              <XCircle size={22} strokeWidth={2.5} style={{ color: '#dc2626' }} />
-              <h3 style={{ fontSize: '1.1rem', fontWeight: '900', color: '#991b1b' }}>
+              <XCircle size={22} strokeWidth={2.5} style={{ color: 'var(--nb-red)' }} />
+              <h3 style={{ fontSize: '1.1rem', fontWeight: '900', color: 'var(--nb-red)' }}>
                 {t('weather.avoidTitle')}
               </h3>
             </div>
@@ -1037,16 +1037,16 @@ export const Weather = () => {
                       boxShadow: 'var(--shadow-sm)'
                     }}
                   >
-                    <div style={{ fontWeight: '900', fontSize: '0.92rem', color: '#991b1b' }}>
+                    <div style={{ fontWeight: '900', fontSize: '0.92rem', color: 'var(--nb-red)' }}>
                       ❌ {lang === 'hi' ? item.titleHi : item.titleEn}
                     </div>
-                    <div style={{ fontSize: '0.8rem', fontWeight: '700', color: '#4b5563', marginTop: '4px' }}>
+                    <div style={{ fontSize: '0.8rem', fontWeight: '700', color: 'var(--color-text-secondary)', marginTop: '4px' }}>
                       {lang === 'hi' ? item.descHi : item.descEn}
                     </div>
                   </div>
                 ))
               ) : (
-                <div style={{ fontSize: '0.85rem', fontWeight: '700', color: '#4b5563' }}>
+                <div style={{ fontSize: '0.85rem', fontWeight: '700', color: 'var(--color-text-secondary)' }}>
                   {t('weather.allGood')}
                 </div>
               )}
@@ -1060,14 +1060,14 @@ export const Weather = () => {
               border: 'var(--border-thick)',
               borderRadius: 'var(--radius-md)',
               boxShadow: 'var(--shadow-md)',
-              backgroundColor: '#fffbeb',
+              backgroundColor: 'var(--nb-yellow-light)',
               padding: 'var(--space-md)',
-              borderTop: '6px solid #d97706'
+              borderTop: '6px solid var(--nb-yellow)'
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-              <AlertTriangle size={22} strokeWidth={2.5} style={{ color: '#d97706' }} />
-              <h3 style={{ fontSize: '1.1rem', fontWeight: '900', color: '#92400e' }}>
+              <AlertTriangle size={22} strokeWidth={2.5} style={{ color: 'var(--nb-yellow-bright)' }} />
+              <h3 style={{ fontSize: '1.1rem', fontWeight: '900', color: 'var(--nb-yellow-bright)' }}>
                 {t('weather.watchTitle')}
               </h3>
             </div>
@@ -1085,16 +1085,16 @@ export const Weather = () => {
                       boxShadow: 'var(--shadow-sm)'
                     }}
                   >
-                    <div style={{ fontWeight: '900', fontSize: '0.92rem', color: '#92400e' }}>
+                    <div style={{ fontWeight: '900', fontSize: '0.92rem', color: 'var(--nb-yellow-bright)' }}>
                       ⚠️ {lang === 'hi' ? item.titleHi : item.titleEn}
                     </div>
-                    <div style={{ fontSize: '0.8rem', fontWeight: '700', color: '#4b5563', marginTop: '4px' }}>
+                    <div style={{ fontSize: '0.8rem', fontWeight: '700', color: 'var(--color-text-secondary)', marginTop: '4px' }}>
                       {lang === 'hi' ? item.descHi : item.descEn}
                     </div>
                   </div>
                 ))
               ) : (
-                <div style={{ fontSize: '0.85rem', fontWeight: '700', color: '#4b5563' }}>
+                <div style={{ fontSize: '0.85rem', fontWeight: '700', color: 'var(--color-text-secondary)' }}>
                   {t('weather.allGood')}
                 </div>
               )}
@@ -1379,7 +1379,7 @@ export const Weather = () => {
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: 'var(--space-sm)' }}>
-          <Wheat size={24} strokeWidth={2.5} style={{ color: '#15803d' }} />
+          <Wheat size={24} strokeWidth={2.5} style={{ color: 'var(--nb-green)' }} />
           <div>
             <h2 style={{ fontSize: '1.3rem', fontWeight: '900', color: 'var(--nb-black)' }}>
               {t('weather.cropWeatherRiskTitle')} 🌱
@@ -1391,12 +1391,12 @@ export const Weather = () => {
         <div
           style={{
             padding: '8px 12px',
-            backgroundColor: '#fffbeb',
-            border: '1.5px solid #d97706',
+            backgroundColor: 'var(--nb-yellow-light)',
+            border: '1.5px solid var(--nb-yellow)',
             borderRadius: 'var(--radius-sm)',
             fontSize: '0.8rem',
             fontWeight: '800',
-            color: '#92400e',
+            color: 'var(--nb-yellow-bright)',
             marginBottom: 'var(--space-md)'
           }}
         >

@@ -118,57 +118,59 @@
   --shadow-float: var(--shadow-lg);
 }
 
-/* Dark Theme - Neo-Brutalist Cyber Obsidian with Crisp White/Neon Offsets */
+/* Dark Theme - Neo-Brutalist Cyber Obsidian with Crisp Contrast & Jewel Accents */
 [data-theme="dark"] {
   --theme-mode: 'dark';
 
-  --nb-black: #ffffff;
-  --nb-white: #1a1c23;
-  --nb-canvas: #0e0f12;
-  --nb-canvas-alt: #15171e;
-  --nb-card-bg: #1a1c23;
+  /* Base Obsidian Surfaces */
+  --nb-black: #f8fafc;
+  --nb-white: #171b26;
+  --nb-canvas: #090a0f;
+  --nb-canvas-alt: #12151e;
+  --nb-card-bg: #171b26;
 
-  --nb-border-color: #ffffff;
-  --nb-shadow-color: #ffffff;
+  /* Crisp structural borders & true physical depth drop-shadows */
+  --nb-border-color: #384252;
+  --nb-shadow-color: #000000;
 
-  /* Accents adjusted for dark readability */
+  /* Rich Jewel Accents tailored for dark backgrounds */
   --nb-green: #4ade80;
   --nb-green-bright: #22c55e;
-  --nb-green-light: #064e3b;
-  --nb-green-subtle: #022c22;
+  --nb-green-light: #0d2818;
+  --nb-green-subtle: #081a10;
 
   --nb-yellow: #facc15;
   --nb-yellow-bright: #fde047;
-  --nb-yellow-light: #3d2c00;
-  --nb-yellow-subtle: #241a00;
+  --nb-yellow-light: #2c2206;
+  --nb-yellow-subtle: #1c1503;
 
   --nb-orange: #fb923c;
   --nb-orange-bright: #f97316;
-  --nb-orange-light: #431407;
-  --nb-orange-subtle: #270c04;
+  --nb-orange-light: #33190a;
+  --nb-orange-subtle: #211006;
 
   --nb-blue: #38bdf8;
   --nb-blue-bright: #0ea5e9;
-  --nb-blue-light: #082f49;
-  --nb-blue-subtle: #031d2e;
+  --nb-blue-light: #0c253d;
+  --nb-blue-subtle: #081829;
 
   --nb-red: #f87171;
   --nb-red-bright: #ef4444;
-  --nb-red-light: #450a0a;
-  --nb-red-subtle: #280505;
+  --nb-red-light: #331215;
+  --nb-red-subtle: #220b0d;
 
-  --nb-purple: #a78bfa;
-  --nb-purple-light: #2e1065;
+  --nb-purple: #c084fc;
+  --nb-purple-light: #25143d;
 
   /* Semantic Compatibility */
-  --color-primary-darker: #ffffff;
+  --color-primary-darker: #f8fafc;
   --color-primary-dark: #4ade80;
   --color-primary: #22c55e;
   --color-primary-light: #86efac;
   --color-primary-subtle: var(--nb-green-light);
   --color-primary-faint: var(--nb-green-subtle);
 
-  --color-earth-dark: #ffffff;
+  --color-earth-dark: #f8fafc;
   --color-earth: #fb923c;
   --color-earth-light: #fed7aa;
   --color-earth-subtle: var(--nb-orange-light);
@@ -182,12 +184,12 @@
   --color-bg-card: var(--nb-card-bg);
   --color-bg-subtle: var(--nb-canvas-alt);
   --color-border: var(--nb-border-color);
-  --color-border-focus: var(--nb-border-color);
+  --color-border-focus: var(--nb-green-bright);
 
-  --color-text-main: #ffffff;
-  --color-text-secondary: #e5e7eb;
-  --color-text-muted: #9ca3af;
-  --color-text-inverse: #000000;
+  --color-text-main: #f8fafc;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted: #94a3b8;
+  --color-text-inverse: #090a0f;
 
   --color-success: #4ade80;
   --color-success-bg: var(--nb-green-light);

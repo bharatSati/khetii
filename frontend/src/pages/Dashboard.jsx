@@ -189,7 +189,7 @@ export const Dashboard = () => {
           <h1 style={{ fontSize: '1.85rem', fontWeight: '900', color: 'var(--nb-black)' }}>
             {t('dashboard.greeting')}, {user?.name || 'किसान साथी'}! 🌾
           </h1>
-          <p style={{ fontWeight: '700', color: '#374151', marginTop: '4px', fontSize: '0.95rem' }}>
+          <p style={{ fontWeight: '700', color: 'var(--color-text-secondary)', marginTop: '4px', fontSize: '0.95rem' }}>
             {(user?.district || user?.city) ? `${user?.district || user?.city}, ` : ''}{user?.state || 'भारत'} {user?.landSizeAcres ? `• ${user.landSizeAcres} एकड़ खेत` : ''}
           </p>
         </div>

@@ -70,7 +70,7 @@ export const Sidebar = () => {
                 borderRadius: 'var(--radius-sm)',
                 fontSize: '0.94rem',
                 fontWeight: '800',
-                color: 'var(--nb-black)',
+                color: isActive ? '#000000' : 'var(--nb-black)',
                 backgroundColor: isActive ? 'var(--nb-yellow)' : 'transparent',
                 border: isActive ? 'var(--border-medium)' : '2px solid transparent',
                 boxShadow: isActive ? 'var(--shadow-sm)' : 'none',
@@ -85,7 +85,7 @@ export const Sidebar = () => {
                     size={20}
                     strokeWidth={2.5}
                     style={{
-                      color: 'var(--nb-black)',
+                      color: isActive ? '#000000' : 'var(--nb-black)',
                       flexShrink: 0
                     }}
                   />

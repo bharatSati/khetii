@@ -78,10 +78,10 @@ export const TTSButton = ({
           width: size === 'sm' ? '30px' : '36px',
           height: size === 'sm' ? '30px' : '36px',
           borderRadius: 'var(--radius-sm)',
-          border: '1.5px solid #000',
-          backgroundColor: isSpeaking ? '#fee2e2' : 'var(--nb-white)',
-          color: isSpeaking ? '#dc2626' : 'var(--nb-black)',
-          boxShadow: isSpeaking ? 'none' : '1.5px 1.5px 0px #000',
+          border: '1.5px solid var(--nb-border-color)',
+          backgroundColor: isSpeaking ? 'var(--nb-red-light)' : 'var(--nb-white)',
+          color: isSpeaking ? 'var(--nb-red)' : 'var(--nb-black)',
+          boxShadow: isSpeaking ? 'none' : '1.5px 1.5px 0px var(--nb-shadow-color)',
           cursor: 'pointer',
           transition: 'all 0.1s ease',
           transform: isSpeaking ? 'scale(0.96)' : 'none',
@@ -89,7 +89,7 @@ export const TTSButton = ({
         }}
       >
         {isSpeaking ? (
-          <Square size={iconSize} strokeWidth={2.5} style={{ fill: '#dc2626' }} />
+          <Square size={iconSize} strokeWidth={2.5} style={{ fill: 'var(--nb-red)', color: 'var(--nb-red)' }} />
         ) : (
           <Volume2 size={iconSize} strokeWidth={2.5} />
         )}
@@ -111,10 +111,10 @@ export const TTSButton = ({
           fontSize: size === 'sm' ? '0.78rem' : '0.86rem',
           fontWeight: '800',
           borderRadius: 'var(--radius-pill)',
-          border: '1.5px solid #000',
-          backgroundColor: isSpeaking ? '#fef2f2' : 'var(--nb-white)',
-          color: isSpeaking ? '#b91c1c' : 'var(--nb-black)',
-          boxShadow: isSpeaking ? 'none' : '1px 1px 0px #000',
+          border: '1.5px solid var(--nb-border-color)',
+          backgroundColor: isSpeaking ? 'var(--nb-red-light)' : 'var(--nb-white)',
+          color: isSpeaking ? 'var(--nb-red)' : 'var(--nb-black)',
+          boxShadow: isSpeaking ? 'none' : '1px 1px 0px var(--nb-shadow-color)',
           cursor: 'pointer',
           transition: 'all 0.1s ease',
           ...style
@@ -122,7 +122,7 @@ export const TTSButton = ({
       >
         {isSpeaking ? (
           <>
-            <Square size={iconSize} strokeWidth={2.5} style={{ fill: '#dc2626', color: '#dc2626' }} />
+            <Square size={iconSize} strokeWidth={2.5} style={{ fill: 'var(--nb-red)', color: 'var(--nb-red)' }} />
             <span>{displayLabel}</span>
           </>
         ) : (
@@ -138,11 +138,11 @@ export const TTSButton = ({
   // Standard Button (primary / secondary)
   const isPrimary = variant === 'primary';
   const bgColor = isSpeaking
-    ? '#ef4444'
+    ? 'var(--nb-red)'
     : isPrimary
     ? 'var(--nb-yellow)'
     : 'var(--nb-white)';
-  const textColor = isSpeaking ? '#ffffff' : 'var(--nb-black)';
+  const textColor = isSpeaking ? '#ffffff' : (isPrimary ? '#000000' : 'var(--nb-black)');
 
   return (
     <button
@@ -158,8 +158,8 @@ export const TTSButton = ({
         fontWeight: '800',
         backgroundColor: bgColor,
         color: textColor,
-        border: '1.5px solid #000',
-        boxShadow: isSpeaking ? 'none' : '2px 2px 0px #000',
+        border: '1.5px solid var(--nb-border-color)',
+        boxShadow: isSpeaking ? 'none' : '2px 2px 0px var(--nb-shadow-color)',
         borderRadius: 'var(--radius-sm)',
         cursor: 'pointer',
         transition: 'all 0.1s ease',

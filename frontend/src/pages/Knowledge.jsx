@@ -564,7 +564,7 @@ export const Knowledge = () => {
               className="card"
               style={{
                 marginBottom: 'var(--space-xl)',
-                backgroundColor: kccAiSummary.isAvailableInKcc ? 'var(--nb-green-subtle)' : '#fffbeb',
+                backgroundColor: kccAiSummary.isAvailableInKcc ? 'var(--nb-green-subtle)' : 'var(--nb-yellow-light)',
                 border: 'var(--border-thick)',
                 borderRadius: 'var(--radius-md)',
                 boxShadow: 'var(--shadow-md)',
@@ -573,7 +573,7 @@ export const Knowledge = () => {
             >
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px', flexWrap: 'wrap', gap: '8px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <Sparkles size={22} strokeWidth={2.5} style={{ color: kccAiSummary.isAvailableInKcc ? '#15803d' : '#d97706' }} />
+                  <Sparkles size={22} strokeWidth={2.5} style={{ color: kccAiSummary.isAvailableInKcc ? 'var(--nb-green)' : 'var(--nb-yellow-bright)' }} />
                   <h3 style={{ fontSize: '1.2rem', fontWeight: '900', color: 'var(--nb-black)' }}>
                     {t('knowledge.kccAiSummaryTitle')}
                   </h3>
@@ -585,7 +585,7 @@ export const Knowledge = () => {
                     <span
                       style={{
                         backgroundColor: 'var(--nb-white)',
-                        border: '1.5px solid #000',
+                        border: '1.5px solid var(--nb-border-color)',
                         borderRadius: 'var(--radius-sm)',
                         padding: '2px 8px',
                         fontSize: '0.75rem',
@@ -600,13 +600,13 @@ export const Knowledge = () => {
                   {/* Match Accuracy Pill */}
                   <span
                     style={{
-                      backgroundColor: kccAiSummary.isAvailableInKcc ? '#ecfdf5' : '#fef2f2',
-                      border: '1.5px solid #000',
+                      backgroundColor: kccAiSummary.isAvailableInKcc ? 'var(--nb-green-light)' : 'var(--nb-red-light)',
+                      border: '1.5px solid var(--nb-border-color)',
                       borderRadius: 'var(--radius-sm)',
                       padding: '2px 8px',
                       fontSize: '0.75rem',
                       fontWeight: '900',
-                      color: kccAiSummary.isAvailableInKcc ? '#166534' : '#991b1b'
+                      color: kccAiSummary.isAvailableInKcc ? 'var(--nb-green)' : 'var(--nb-red)'
                     }}
                   >
                     {kccAiSummary.matchNote || (kccAiSummary.isAvailableInKcc ? `🎯 KCC Match: ${kccAiSummary.matchAccuracy}%` : `⚠️ KCC Match: ${kccAiSummary.matchAccuracy}%`)}
@@ -615,12 +615,12 @@ export const Knowledge = () => {
                   <span
                     style={{
                       backgroundColor: 'var(--nb-white)',
-                      border: '1.5px solid #000',
+                      border: '1.5px solid var(--nb-border-color)',
                       borderRadius: 'var(--radius-sm)',
                       padding: '2px 8px',
                       fontSize: '0.75rem',
                       fontWeight: '800',
-                      color: '#166534'
+                      color: 'var(--nb-green)'
                     }}
                   >
                     {kccAiSummary.sourceNote}
@@ -646,7 +646,7 @@ export const Knowledge = () => {
 
               {kccAiSummary.actionSteps && kccAiSummary.actionSteps.length > 0 && (
                 <div style={{ marginTop: '10px' }}>
-                  <div style={{ fontSize: '0.82rem', fontWeight: '900', textTransform: 'uppercase', color: kccAiSummary.isAvailableInKcc ? '#166534' : '#92400e', marginBottom: '6px' }}>
+                  <div style={{ fontSize: '0.82rem', fontWeight: '900', textTransform: 'uppercase', color: kccAiSummary.isAvailableInKcc ? 'var(--nb-green)' : 'var(--nb-yellow-bright)', marginBottom: '6px' }}>
                     📋 {t('knowledge.kccAiActionPlan')}
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
@@ -655,7 +655,7 @@ export const Knowledge = () => {
                         key={idx}
                         style={{
                           backgroundColor: 'var(--nb-white)',
-                          border: '1.5px solid #000',
+                          border: '1.5px solid var(--nb-border-color)',
                           borderRadius: 'var(--radius-sm)',
                           padding: '8px 12px',
                           fontSize: '0.9rem',
@@ -833,18 +833,18 @@ export const Knowledge = () => {
                       {/* Answer / Advisory */}
                       <div
                         style={{
-                          backgroundColor: '#f8fafc',
-                          borderLeft: '4px solid #16a34a',
+                          backgroundColor: 'var(--nb-canvas-alt)',
+                          borderLeft: '4px solid var(--nb-green)',
                           padding: '10px 12px',
                           borderRadius: 'var(--radius-sm)',
-                          border: '1.5px solid #e2e8f0',
+                          border: '1.5px solid var(--nb-border-color)',
                           borderLeftWidth: '4px'
                         }}
                       >
-                        <span style={{ fontSize: '0.78rem', fontWeight: '900', textTransform: 'uppercase', color: '#166534', display: 'block', marginBottom: '2px' }}>
+                        <span style={{ fontSize: '0.78rem', fontWeight: '900', textTransform: 'uppercase', color: 'var(--nb-green)', display: 'block', marginBottom: '2px' }}>
                           💡 {t('knowledge.kccAdvisoryLabel')}
                         </span>
-                        <div style={{ fontSize: '0.94rem', fontWeight: '700', color: '#1e293b', lineHeight: 1.45 }}>
+                        <div style={{ fontSize: '0.94rem', fontWeight: '700', color: 'var(--color-text-main)', lineHeight: 1.45 }}>
                           {r.answer}
                         </div>
                       </div>
@@ -925,15 +925,15 @@ export const Knowledge = () => {
                     <div
                       style={{
                         padding: '8px 10px',
-                        backgroundColor: '#f1f5f9',
+                        backgroundColor: 'var(--nb-canvas-alt)',
                         borderRadius: 'var(--radius-sm)',
-                        border: '1px solid #cbd5e1',
+                        border: '1px solid var(--nb-border-color)',
                         fontSize: '0.85rem',
                         fontWeight: '700',
-                        color: '#0f172a'
+                        color: 'var(--color-text-main)'
                       }}
                     >
-                      <strong style={{ color: '#166534' }}>💡 KCC:</strong> {item.answer}
+                      <strong style={{ color: 'var(--nb-green)' }}>💡 KCC:</strong> {item.answer}
                     </div>
                   </div>
                 ))}
@@ -1251,17 +1251,17 @@ export const Knowledge = () => {
                                 <div
                                   style={{
                                     padding: 'var(--space-md)',
-                                    backgroundColor: '#f0fdf4',
+                                    backgroundColor: 'var(--nb-green-light)',
                                     border: 'var(--border-thin)',
                                     borderRadius: 'var(--radius-sm)',
-                                    borderTop: '4px solid #16a34a'
+                                    borderTop: '4px solid var(--nb-green)'
                                   }}
                                 >
-                                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontWeight: '900', fontSize: '0.85rem', textTransform: 'uppercase', marginBottom: '8px', color: '#166534' }}>
+                                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontWeight: '900', fontSize: '0.85rem', textTransform: 'uppercase', marginBottom: '8px', color: 'var(--nb-green)' }}>
                                     <CheckCircle size={16} strokeWidth={2.5} />
                                     <span>{t('knowledge.dos')}</span>
                                   </div>
-                                  <ul style={{ margin: 0, paddingLeft: '18px', fontSize: '0.88rem', fontWeight: '600', color: '#1f2937' }}>
+                                  <ul style={{ margin: 0, paddingLeft: '18px', fontSize: '0.88rem', fontWeight: '600', color: 'var(--color-text-main)' }}>
                                     {dosList.map((item, i) => (
                                       <li key={i} style={{ marginBottom: '4px' }}>
                                         {typeof item === 'string' ? item : (item[lang] || item.en)}
@@ -1276,17 +1276,17 @@ export const Knowledge = () => {
                                 <div
                                   style={{
                                     padding: 'var(--space-md)',
-                                    backgroundColor: '#fef2f2',
+                                    backgroundColor: 'var(--nb-red-light)',
                                     border: 'var(--border-thin)',
                                     borderRadius: 'var(--radius-sm)',
-                                    borderTop: '4px solid #dc2626'
+                                    borderTop: '4px solid var(--nb-red)'
                                   }}
                                 >
-                                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontWeight: '900', fontSize: '0.85rem', textTransform: 'uppercase', marginBottom: '8px', color: '#991b1b' }}>
+                                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontWeight: '900', fontSize: '0.85rem', textTransform: 'uppercase', marginBottom: '8px', color: 'var(--nb-red)' }}>
                                     <XCircle size={16} strokeWidth={2.5} />
                                     <span>{t('knowledge.donts')}</span>
                                   </div>
-                                  <ul style={{ margin: 0, paddingLeft: '18px', fontSize: '0.88rem', fontWeight: '600', color: '#1f2937' }}>
+                                  <ul style={{ margin: 0, paddingLeft: '18px', fontSize: '0.88rem', fontWeight: '600', color: 'var(--color-text-main)' }}>
                                     {dontsList.map((item, i) => (
                                       <li key={i} style={{ marginBottom: '4px' }}>
                                         {typeof item === 'string' ? item : (item[lang] || item.en)}

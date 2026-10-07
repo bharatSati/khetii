@@ -651,7 +651,7 @@ export const Schemes = () => {
 
                   {aiResponse.keyPoints && aiResponse.keyPoints.length > 0 && (
                     <div style={{ marginTop: '8px' }}>
-                      <div style={{ fontSize: '0.78rem', fontWeight: '900', textTransform: 'uppercase', color: '#166534', marginBottom: '4px' }}>
+                      <div style={{ fontSize: '0.78rem', fontWeight: '900', textTransform: 'uppercase', color: 'var(--nb-green)', marginBottom: '4px' }}>
                         📋 {t('schemes.askAiKeyPoints')}
                       </div>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
@@ -659,9 +659,9 @@ export const Schemes = () => {
                           <div
                             key={pIdx}
                             style={{
-                              backgroundColor: '#f8fafc',
-                              border: '1px solid #e2e8f0',
-                              borderLeft: '3px solid #16a34a',
+                              backgroundColor: 'var(--nb-canvas-alt)',
+                              border: '1px solid var(--nb-border-color)',
+                              borderLeft: '3px solid var(--nb-green)',
                               padding: '6px 10px',
                               borderRadius: 'var(--radius-sm)',
                               fontSize: '0.86rem',
@@ -676,7 +676,7 @@ export const Schemes = () => {
                     </div>
                   )}
 
-                  <div style={{ marginTop: '8px', fontSize: '0.72rem', fontWeight: '700', color: '#6b7280', borderTop: '1px dashed #e2e8f0', paddingTop: '4px' }}>
+                  <div style={{ marginTop: '8px', fontSize: '0.72rem', fontWeight: '700', color: 'var(--color-text-muted)', borderTop: '1px dashed var(--nb-border-color)', paddingTop: '4px' }}>
                     ℹ️ {aiResponse.disclaimer}
                   </div>
                 </div>
