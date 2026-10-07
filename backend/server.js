@@ -66,16 +66,31 @@ app.use('/api/*', (req, res) => {
 // Centralized error handler
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 const startServer = async () => {
   try {
     await connectDB();
-    app.listen(PORT, () => {
+    const server = app.listen(PORT, () => {
       console.log(`===============================================`);
       console.log(`  🌾 KHETI Server running on port ${PORT}`);
       console.log(`  🌾 API base: http://localhost:${PORT}/api`);
       console.log(`===============================================`);
+    });
+
+    server.on('error', (err) => {
+      if (err.code === 'EADDRINUSE') {
+        const altPort = Number(PORT) + 1;
+        console.warn(`[Server] Port ${PORT} is in use (e.g. AirPlay). Trying fallback port ${altPort}...`);
+        app.listen(altPort, () => {
+          console.log(`===============================================`);
+          console.log(`  🌾 KHETI Server running on port ${altPort}`);
+          console.log(`  🌾 API base: http://localhost:${altPort}/api`);
+          console.log(`===============================================`);
+        });
+      } else {
+        console.error('Server error:', err);
+      }
     });
   } catch (error) {
     console.error('Failed to start server:', error);
