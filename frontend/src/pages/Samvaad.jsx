@@ -24,6 +24,7 @@ import {
 import samvaadService from '../services/samvaadService';
 import Loader from '../components/Loader';
 import EmptyState from '../components/EmptyState';
+import TTSButton from '../components/TTSButton';
 
 export const Samvaad = () => {
   const { user, isAuthenticated } = useAuth();
@@ -623,6 +624,13 @@ export const Samvaad = () => {
                     >
                       {catBadge.label}
                     </span>
+
+                    <TTSButton
+                      text={[post.title, post.content]}
+                      variant="icon-only"
+                      size="sm"
+                      title={lang === 'hi' ? 'पोस्ट सुनें' : 'Listen Post'}
+                    />
 
                     {/* Delete button if author */}
                     {post.isAuthor && (

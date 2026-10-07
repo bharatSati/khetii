@@ -19,6 +19,7 @@ import {
 import Loader from '../components/Loader';
 import EmptyState from '../components/EmptyState';
 import Modal from '../components/Modal';
+import TTSButton from '../components/TTSButton';
 
 const CATEGORIES = [
   'All',
@@ -376,10 +377,18 @@ export const Schemes = () => {
                 borderRadius: 'var(--radius-sm)'
               }}
             >
-              <h3 style={{ fontSize: '1rem', fontWeight: '900', color: 'var(--nb-black)', marginBottom: '4px', textTransform: 'uppercase' }}>
-                {t('schemes.benefits')}
-              </h3>
-              <p style={{ fontSize: '0.92rem', fontWeight: '700', color: 'var(--nb-black)', lineHeight: 1.5 }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
+                <h3 style={{ fontSize: '1rem', fontWeight: '900', color: 'var(--nb-black)', margin: 0, textTransform: 'uppercase' }}>
+                  {t('schemes.benefits')}
+                </h3>
+                <TTSButton
+                  text={selectedScheme.benefits?.[lang] || selectedScheme.benefits?.en}
+                  lang={lang}
+                  variant="pill"
+                  size="sm"
+                />
+              </div>
+              <p style={{ fontSize: '0.92rem', fontWeight: '700', color: 'var(--nb-black)', lineHeight: 1.5, margin: 0 }}>
                 {selectedScheme.benefits?.[lang] || selectedScheme.benefits?.en}
               </p>
             </div>
@@ -606,25 +615,34 @@ export const Schemes = () => {
                     padding: '12px'
                   }}
                 >
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px', flexWrap: 'wrap', gap: '6px' }}>
-                    <div style={{ fontSize: '0.78rem', fontWeight: '900', color: '#6d28d9', textTransform: 'uppercase' }}>
-                      💡 {lang === 'hi' ? 'योजना AI परामर्श' : 'Scheme AI Advisory'}
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px', flexWrap: 'wrap', gap: '6px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <div style={{ fontSize: '0.78rem', fontWeight: '900', color: '#6d28d9', textTransform: 'uppercase' }}>
+                        💡 {lang === 'hi' ? 'योजना AI परामर्श' : 'Scheme AI Advisory'}
+                      </div>
+                      {aiResponse.language && (
+                        <span
+                          style={{
+                            backgroundColor: '#f3e8ff',
+                            color: '#6b21a8',
+                            border: '1px solid #000',
+                            borderRadius: 'var(--radius-sm)',
+                            padding: '1px 6px',
+                            fontSize: '0.72rem',
+                            fontWeight: '800'
+                          }}
+                        >
+                          💬 {aiResponse.language === 'hinglish' ? 'Hinglish' : aiResponse.language === 'hindi' ? 'हिंदी (Hindi)' : 'English'}
+                        </span>
+                      )}
                     </div>
-                    {aiResponse.language && (
-                      <span
-                        style={{
-                          backgroundColor: '#f3e8ff',
-                          color: '#6b21a8',
-                          border: '1px solid #000',
-                          borderRadius: 'var(--radius-sm)',
-                          padding: '1px 6px',
-                          fontSize: '0.72rem',
-                          fontWeight: '800'
-                        }}
-                      >
-                        💬 {aiResponse.language === 'hinglish' ? 'Hinglish' : aiResponse.language === 'hindi' ? 'हिंदी (Hindi)' : 'English'}
-                      </span>
-                    )}
+
+                    <TTSButton
+                      text={[aiResponse.answer, ...(aiResponse.keyPoints || [])]}
+                      lang={aiResponse.language === 'hindi' ? 'hi' : 'en'}
+                      variant="pill"
+                      size="sm"
+                    />
                   </div>
 
                   <p style={{ fontSize: '0.94rem', fontWeight: '800', color: 'var(--nb-black)', lineHeight: 1.5, margin: '0 0 8px 0' }}>

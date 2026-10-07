@@ -33,6 +33,7 @@ import { ocrService } from '../services/ocrService';
 import { weatherService } from '../services/weatherService';
 import Loader from '../components/Loader';
 import EmptyState from '../components/EmptyState';
+import TTSButton from '../components/TTSButton';
 
 export const Dashboard = () => {
   const { user } = useAuth();
@@ -450,33 +451,42 @@ export const Dashboard = () => {
                 padding: '12px 16px',
                 display: 'flex',
                 alignItems: 'flex-start',
+                justifyContent: 'space-between',
                 gap: '12px',
                 marginBottom: 'var(--space-md)'
               }}
             >
-              <div
-                style={{
-                  width: '32px',
-                  height: '32px',
-                  borderRadius: 'var(--radius-sm)',
-                  backgroundColor: 'var(--nb-white)',
-                  border: '1.5px solid var(--nb-black)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  flexShrink: 0
-                }}
-              >
-                <Sparkles size={18} strokeWidth={2.5} style={{ color: 'var(--nb-black)' }} />
-              </div>
-              <div>
-                <div style={{ fontSize: '0.82rem', fontWeight: '900', textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--nb-black)', marginBottom: '2px' }}>
-                  {t('dashboard.agriAdvisory')}
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', flex: 1 }}>
+                <div
+                  style={{
+                    width: '32px',
+                    height: '32px',
+                    borderRadius: 'var(--radius-sm)',
+                    backgroundColor: 'var(--nb-white)',
+                    border: '1.5px solid var(--nb-black)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0
+                  }}
+                >
+                  <Sparkles size={18} strokeWidth={2.5} style={{ color: 'var(--nb-black)' }} />
                 </div>
-                <div style={{ fontSize: '0.92rem', fontWeight: '700', color: '#1f2937', lineHeight: 1.45 }}>
-                  {lang === 'hi' ? weatherData.advisory?.hi : weatherData.advisory?.en}
+                <div>
+                  <div style={{ fontSize: '0.82rem', fontWeight: '900', textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--nb-black)', marginBottom: '2px' }}>
+                    {t('dashboard.agriAdvisory')}
+                  </div>
+                  <div style={{ fontSize: '0.92rem', fontWeight: '700', color: '#1f2937', lineHeight: 1.45 }}>
+                    {lang === 'hi' ? weatherData.advisory?.hi : weatherData.advisory?.en}
+                  </div>
                 </div>
               </div>
+              <TTSButton
+                text={lang === 'hi' ? weatherData.advisory?.hi : weatherData.advisory?.en}
+                variant="icon-only"
+                size="sm"
+                title={lang === 'hi' ? 'सलाह सुनें' : 'Listen Advisory'}
+              />
             </div>
 
             {/* 3-Day Forecast Strip */}

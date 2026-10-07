@@ -32,6 +32,7 @@ import {
 } from 'lucide-react';
 import Loader from '../components/Loader';
 import EmptyState from '../components/EmptyState';
+import TTSButton from '../components/TTSButton';
 
 const CATEGORIES = [
   'All',
@@ -624,6 +625,18 @@ export const Knowledge = () => {
                   >
                     {kccAiSummary.sourceNote}
                   </span>
+
+                  <TTSButton
+                    text={[
+                      kccAiSummary.explanation,
+                      kccAiSummary.actionSteps && kccAiSummary.actionSteps.length > 0
+                        ? `${lang === 'hi' ? 'सलाह के मुख्य कदम' : 'Key Action Steps'}: ${kccAiSummary.actionSteps.join('. ')}`
+                        : ''
+                    ]}
+                    variant="pill"
+                    size="sm"
+                    label={lang === 'hi' ? 'सलाह सुनें' : 'Listen Advice'}
+                  />
                 </div>
               </div>
 
@@ -794,6 +807,16 @@ export const Knowledge = () => {
                           >
                             ⭐ {Math.round(r.relevanceScore * 100)}% {t('knowledge.kccMatchScore')}
                           </span>
+
+                          <TTSButton
+                            text={[
+                              `${lang === 'hi' ? 'किसान का प्रश्न' : 'Question'}: ${r.question}`,
+                              `${lang === 'hi' ? 'केसीसी कृषि परामर्श' : 'KCC Advisory'}: ${r.answer}`
+                            ]}
+                            variant="icon-only"
+                            size="sm"
+                            title={lang === 'hi' ? 'उत्तर सुनें' : 'Listen to Answer'}
+                          />
                         </div>
                       </div>
 
@@ -878,9 +901,20 @@ export const Knowledge = () => {
                         >
                           🌾 {item.crop}
                         </span>
-                        <span style={{ fontSize: '0.72rem', fontWeight: '700', color: '#6b7280' }}>
-                          {item.category}
-                        </span>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                          <span style={{ fontSize: '0.72rem', fontWeight: '700', color: '#6b7280' }}>
+                            {item.category}
+                          </span>
+                          <TTSButton
+                            text={[
+                              `${lang === 'hi' ? 'किसान का प्रश्न' : 'Question'}: ${item.question}`,
+                              `${lang === 'hi' ? 'केसीसी कृषि परामर्श' : 'KCC Advisory'}: ${item.answer}`
+                            ]}
+                            variant="icon-only"
+                            size="sm"
+                            title={lang === 'hi' ? 'उत्तर सुनें' : 'Listen to Answer'}
+                          />
+                        </div>
                       </div>
 
                       <div style={{ fontWeight: '800', fontSize: '0.92rem', color: 'var(--nb-black)', marginBottom: '8px' }}>
@@ -1075,6 +1109,30 @@ export const Knowledge = () => {
                     {/* Accordion Content */}
                     {isExpanded && (
                       <div style={{ padding: 'var(--space-lg)', backgroundColor: 'var(--nb-white)' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 'var(--space-md)', flexWrap: 'wrap', gap: '8px' }}>
+                          <span style={{ fontSize: '0.85rem', fontWeight: '900', textTransform: 'uppercase', color: 'var(--nb-black)' }}>
+                            📖 {lang === 'hi' ? 'फसल विवरण एवं निर्देश' : 'Crop Overview & Guide'}
+                          </span>
+                          <TTSButton
+                            text={[
+                              article.title[lang] || article.title.en,
+                              article.summary[lang] || article.summary.en,
+                              (article.sowingTime?.[lang] || article.sowingTime?.en || article.idealTiming?.[lang] || article.idealTiming?.en)
+                                ? `${lang === 'hi' ? 'बुवाई का समय' : 'Sowing Time'}: ${article.sowingTime?.[lang] || article.sowingTime?.en || article.idealTiming?.[lang] || article.idealTiming?.en}`
+                                : '',
+                              (article.fertilizer?.[lang] || article.fertilizer?.en || article.fertilizerDose?.[lang] || article.fertilizerDose?.en)
+                                ? `${lang === 'hi' ? 'उर्वरक' : 'Fertilizer'}: ${article.fertilizer?.[lang] || article.fertilizer?.en || article.fertilizerDose?.[lang] || article.fertilizerDose?.en}`
+                                : '',
+                              (article.irrigation?.[lang] || article.irrigation?.en)
+                                ? `${lang === 'hi' ? 'सिंचाई' : 'Irrigation'}: ${article.irrigation?.[lang] || article.irrigation?.en}`
+                                : ''
+                            ]}
+                            variant="pill"
+                            size="sm"
+                            label={lang === 'hi' ? 'गाइड सुनें' : 'Listen Guide'}
+                          />
+                        </div>
+
                         <p style={{ fontSize: '1rem', fontWeight: '600', color: 'var(--color-text-secondary)', marginBottom: 'var(--space-lg)', lineHeight: 1.6 }}>
                           {article.summary[lang] || article.summary.en}
                         </p>

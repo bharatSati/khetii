@@ -13,6 +13,7 @@ import {
   History
 } from 'lucide-react';
 import Loader from '../components/Loader';
+import TTSButton from '../components/TTSButton';
 
 export const Documents = () => {
   const { t, i18n } = useTranslation();
@@ -228,7 +229,13 @@ export const Documents = () => {
             </h2>
 
             {extractedText && (
-              <div style={{ display: 'flex', gap: '8px' }}>
+              <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                <TTSButton
+                  text={extractedText}
+                  variant="secondary"
+                  size="sm"
+                  label={i18n.language?.startsWith('hi') ? 'दस्तावेज़ सुनें' : 'Listen'}
+                />
                 <button onClick={handleCopy} className="btn btn-secondary btn-sm" title="Copy">
                   {copied ? <Check size={16} strokeWidth={2.5} style={{ color: 'var(--nb-green)' }} /> : <Copy size={16} strokeWidth={2.5} />}
                   <span>{copied ? t('common.copied') : t('common.copy')}</span>

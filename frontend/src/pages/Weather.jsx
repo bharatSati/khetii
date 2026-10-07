@@ -37,6 +37,7 @@ import {
 import { weatherService } from '../services/weatherService';
 import Loader from '../components/Loader';
 import EmptyState from '../components/EmptyState';
+import TTSButton from '../components/TTSButton';
 
 export const Weather = () => {
   const { user } = useAuth();
@@ -825,28 +826,41 @@ export const Weather = () => {
               boxShadow: 'var(--shadow-sm)'
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px', flexWrap: 'wrap', gap: '8px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                 <Sparkles size={18} strokeWidth={2.5} style={{ color: '#d97706' }} />
                 <span style={{ fontWeight: '900', fontSize: '0.9rem', color: 'var(--nb-black)', textTransform: 'uppercase' }}>
                   {lang === 'hi' ? 'खेती AI का त्वरित उत्तर' : 'Khetii AI Response'}
                 </span>
               </div>
-              {aiAnswer.directAction && (
-                <span
-                  style={{
-                    backgroundColor: 'var(--nb-white)',
-                    border: '1.5px solid #000',
-                    borderRadius: 'var(--radius-sm)',
-                    padding: '2px 8px',
-                    fontSize: '0.78rem',
-                    fontWeight: '900',
-                    color: 'var(--nb-green)'
-                  }}
-                >
-                  ⚡ {aiAnswer.directAction}
-                </span>
-              )}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                {aiAnswer.directAction && (
+                  <span
+                    style={{
+                      backgroundColor: 'var(--nb-white)',
+                      border: '1.5px solid #000',
+                      borderRadius: 'var(--radius-sm)',
+                      padding: '2px 8px',
+                      fontSize: '0.78rem',
+                      fontWeight: '900',
+                      color: 'var(--nb-green)'
+                    }}
+                  >
+                    ⚡ {aiAnswer.directAction}
+                  </span>
+                )}
+                <TTSButton
+                  text={[
+                    aiAnswer.directAction ? `${lang === 'hi' ? 'सलाह' : 'Action'}: ${aiAnswer.directAction}` : '',
+                    aiAnswer.answer,
+                    aiAnswer.why ? `${lang === 'hi' ? 'कारण' : 'Reason'}: ${aiAnswer.why}` : '',
+                    aiAnswer.warning ? `${lang === 'hi' ? 'सावधानी' : 'Warning'}: ${aiAnswer.warning}` : ''
+                  ]}
+                  variant="pill"
+                  size="sm"
+                  label={lang === 'hi' ? 'उत्तर सुनें' : 'Listen'}
+                />
+              </div>
             </div>
 
             <p style={{ fontSize: '1rem', fontWeight: '800', color: 'var(--nb-black)', lineHeight: 1.5 }}>
@@ -889,8 +903,20 @@ export const Weather = () => {
               borderRadius: 'var(--radius-sm)'
             }}
           >
-            <div style={{ fontWeight: '900', fontSize: '0.85rem', textTransform: 'uppercase', color: '#1f2937', marginBottom: '4px' }}>
-              📢 {aiBriefing.headline}
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '4px', flexWrap: 'wrap', gap: '8px' }}>
+              <div style={{ fontWeight: '900', fontSize: '0.85rem', textTransform: 'uppercase', color: '#1f2937' }}>
+                📢 {aiBriefing.headline}
+              </div>
+              <TTSButton
+                text={[
+                  aiBriefing.headline,
+                  aiBriefing.summary,
+                  aiBriefing.tomorrowPlan ? `${lang === 'hi' ? 'कल की तैयारी' : 'Tomorrow Plan'}: ${aiBriefing.tomorrowPlan}` : ''
+                ]}
+                variant="pill"
+                size="sm"
+                label={lang === 'hi' ? 'बुलेटिन सुनें' : 'Listen Briefing'}
+              />
             </div>
             <div style={{ fontSize: '0.9rem', fontWeight: '700', color: '#374151', lineHeight: 1.45 }}>
               {aiBriefing.summary}
@@ -906,9 +932,23 @@ export const Weather = () => {
 
       {/* 4. 🌾 TODAY'S FARM PLAN: DO NOW, AVOID, WATCH */}
       <div style={{ marginBottom: 'var(--space-xl)' }}>
-        <h2 style={{ fontSize: '1.4rem', fontWeight: '900', marginBottom: 'var(--space-md)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-          {t('weather.todayPlanTitle')} 🌾
-        </h2>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 'var(--space-md)', flexWrap: 'wrap', gap: '10px' }}>
+          <h2 style={{ fontSize: '1.4rem', fontWeight: '900', margin: 0, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+            {t('weather.todayPlanTitle')} 🌾
+          </h2>
+          {todayPlan && (
+            <TTSButton
+              text={[
+                todayPlan.doNow?.length ? `${lang === 'hi' ? 'आज तुरंत करें' : 'Do Now'}: ${todayPlan.doNow.map(d => lang === 'hi' ? d.titleHi : d.titleEn).join(', ')}` : '',
+                todayPlan.avoid?.length ? `${lang === 'hi' ? 'आज न करें' : 'Avoid Today'}: ${todayPlan.avoid.map(a => lang === 'hi' ? a.titleHi : a.titleEn).join(', ')}` : '',
+                todayPlan.watch?.length ? `${lang === 'hi' ? 'निगरानी रखें' : 'Watch & Monitor'}: ${todayPlan.watch.map(w => lang === 'hi' ? w.titleHi : w.titleEn).join(', ')}` : ''
+              ]}
+              variant="secondary"
+              size="sm"
+              label={lang === 'hi' ? 'आज की योजना सुनें' : "Listen Today's Plan"}
+            />
+          )}
+        </div>
 
         <div
           style={{
