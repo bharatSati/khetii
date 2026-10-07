@@ -769,30 +769,91 @@ h1, h2, h3, h4, h5, h6 {
   animation: modalBackdropFade 0.15s ease-out forwards;
 }
 
-/* Responsive visibility rules */
-@media (min-width: 861px) {
-  .header-mobile-menu-box {
-    display: none !important;
+/* Hamburger Slide-Over Navigation Drawer */
+.hamburger-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 2500;
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+.hamburger-drawer-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 390px;
+  max-width: 92vw;
+  height: 100vh;
+  background-color: var(--nb-white);
+  border-left: var(--border-thick);
+  box-shadow: -8px 0px 0px rgba(0, 0, 0, 0.35);
+  z-index: 2600;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  animation: slideDrawerRight 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideDrawerRight {
+  from {
+    transform: translateX(100%);
   }
-  .header-desktop-actions {
-    display: flex !important;
-    align-items: center;
+  to {
+    transform: translateX(0);
   }
 }
 
-@media (max-width: 860px) {
-  .header-desktop-actions {
-    display: none !important;
-  }
-  .header-mobile-menu-box {
-    display: block !important;
-  }
+[data-theme="dark"] .hamburger-drawer-panel {
+  background-color: #171b26;
+  border-left-color: #384252;
+  box-shadow: -8px 0px 0px #000000;
 }
 
-@media (max-width: 1080px) {
-  .header-weather-chip {
-    display: none !important;
-  }
+.drawer-nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  background-color: var(--nb-white);
+  border: var(--border-medium);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  color: var(--nb-black);
+  transition: all 0.15s ease;
+}
+
+.drawer-nav-item:hover {
+  background-color: var(--nb-yellow-light);
+  transform: translate(-1.5px, -1.5px);
+  box-shadow: var(--shadow-md);
+  color: var(--nb-black);
+}
+
+.drawer-nav-item.active {
+  background-color: var(--nb-yellow);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-md);
+}
+
+[data-theme="dark"] .drawer-nav-item {
+  background-color: #1e2433;
+  border-color: #384252;
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .drawer-nav-item:hover {
+  background-color: var(--nb-yellow);
+  color: #000000;
+}
+
+[data-theme="dark"] .drawer-nav-item.active {
+  background-color: var(--nb-yellow);
+  color: #000000;
 }
 
 @media (min-width: 769px) {
