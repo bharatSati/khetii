@@ -6,6 +6,16 @@ export const marketplaceService = {
     return response.data;
   },
 
+  getListingById: async (id) => {
+    const response = await api.get(`/marketplace/listings/${id}`);
+    return response.data;
+  },
+
+  addListingReview: async (id, reviewData) => {
+    const response = await api.post(`/marketplace/listings/${id}/reviews`, reviewData);
+    return response.data;
+  },
+
   getMyListings: async () => {
     const response = await api.get('/marketplace/my-listings');
     return response.data;
@@ -31,3 +41,5 @@ export const marketplaceService = {
     return response.data;
   }
 };
+
+export default marketplaceService;

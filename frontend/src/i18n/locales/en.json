@@ -194,7 +194,21 @@
     "contact": "Contact Seller",
     "postedBy": "Posted by",
     "externalNotConfigured": "External marketplace source is not configured on this server.",
-    "externalDisclaimer": "External listings are fetched live upon request and open in the seller's original platform."
+    "externalDisclaimer": "External listings are fetched live upon request and open in the seller's original platform.",
+    "addToCart": "Add to Cart",
+    "addedToCart": "Added to Cart!",
+    "viewCart": "Cart",
+    "cartTitle": "Farmer Shopping Cart",
+    "cartEmpty": "Your cart is currently empty.",
+    "cartSubtotal": "Cart Total",
+    "checkoutWhatsApp": "Order via WhatsApp",
+    "clearCart": "Clear Cart",
+    "viewDetails": "Details & Reviews",
+    "whatsappChat": "WhatsApp Chat",
+    "sellerDetails": "Seller Profile",
+    "reviews": "Ratings & Reviews",
+    "writeReview": "Write a Review",
+    "submitReview": "Submit Review"
   },
   "finance": {
     "title": "Farmer Finance Ledger",
