@@ -40,7 +40,6 @@ export const Header = () => {
   const isHindi = i18n.language?.startsWith('hi');
 
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
   const [cartCount, setCartCount] = useState(0);
 
   // Sync cart item count
@@ -81,10 +80,9 @@ export const Header = () => {
     };
   }, [drawerOpen]);
 
-  // Close drawer and mobile search on route change
+  // Close drawer on route change
   useEffect(() => {
     setDrawerOpen(false);
-    setMobileSearchOpen(false);
   }, [location.pathname]);
 
   // Keyboard shortcut listener (Escape to close drawer)
@@ -92,7 +90,6 @@ export const Header = () => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') {
         setDrawerOpen(false);
-        setMobileSearchOpen(false);
       }
     };
     window.addEventListener('keydown', handleKeyDown);
@@ -176,270 +173,147 @@ export const Header = () => {
   return (
     <>
       {/* ======================================================== */}
-      {/* MAIN TOP FLOATING NAVBAR */}
+      {/* MAIN TOP FLOATING NAVBAR (ULTRA CLEAN: LOGO + HAMBURGER) */}
       {/* ======================================================== */}
       <header className="main-floating-header">
-        {/* Mobile Full-width Search Bar Mode */}
-        {mobileSearchOpen ? (
-          <div style={{ display: 'flex', alignItems: 'center', width: '100%', gap: '8px' }}>
-            <div style={{ flex: 1, minWidth: 0 }}>
-              <GlobalSearch />
-            </div>
-            <button
-              onClick={() => setMobileSearchOpen(false)}
-              className="hamburger-btn"
-              style={{ width: '38px', height: '38px' }}
-              aria-label="Close search"
-            >
-              <X size={20} strokeWidth={2.5} />
-            </button>
-          </div>
-        ) : (
-          <>
-            {/* 1. LEFT: Brand Emblem + Name */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexShrink: 0 }}>
-              <Link
-                to="/"
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '10px',
-                  textDecoration: 'none'
-                }}
-              >
-                {/* Emblem Box */}
-                <div
-                  className="header-logo-box"
-                  style={{
-                    width: '44px',
-                    height: '44px',
-                    borderRadius: '12px',
-                    backgroundColor: 'var(--nb-green-bright)',
-                    backgroundImage: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)',
-                    border: 'var(--border-medium)',
-                    boxShadow: 'var(--shadow-sm)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: '#ffffff',
-                    flexShrink: 0,
-                    transition: 'transform 0.15s ease'
-                  }}
-                >
-                  <Sprout size={26} strokeWidth={2.6} />
-                </div>
-
-                {/* Typography */}
-                <div>
-                  <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
-                    <span
-                      className="header-brand-title"
-                      style={{
-                        fontSize: '1.45rem',
-                        fontWeight: '900',
-                        color: 'var(--nb-black)',
-                        lineHeight: 1,
-                        letterSpacing: '-0.5px'
-                      }}
-                    >
-                      खेती
-                    </span>
-                    <span
-                      style={{
-                        fontSize: '0.85rem',
-                        fontWeight: '900',
-                        color: 'var(--nb-black)',
-                        letterSpacing: '0.8px',
-                        textTransform: 'uppercase',
-                        opacity: 0.85
-                      }}
-                    >
-                      KHETII
-                    </span>
-                  </div>
-
-                  <div
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '5px',
-                      fontSize: '0.68rem',
-                      fontWeight: '800',
-                      color: 'var(--color-text-secondary)',
-                      marginTop: '2px'
-                    }}
-                    className="header-brand-tagline"
-                  >
-                    <span
-                      style={{
-                        width: '6px',
-                        height: '6px',
-                        borderRadius: '50%',
-                        backgroundColor: 'var(--nb-green-bright)',
-                        display: 'inline-block'
-                      }}
-                      className="pulse-dot"
-                    />
-                    <span>{isHindi ? 'डिजिटल किसान साथी' : 'Digital Farmer Companion'}</span>
-                  </div>
-                </div>
-              </Link>
-            </div>
-
-            {/* 2. CENTER: Global Search Bar */}
+        {/* 1. LEFT: Brand Emblem + Name */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexShrink: 0 }}>
+          <Link
+            to="/"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px',
+              textDecoration: 'none'
+            }}
+          >
+            {/* Emblem Box */}
             <div
-              className="header-search-desktop"
+              className="header-logo-box"
               style={{
-                flex: 1,
-                display: 'flex',
-                justifyContent: 'center',
-                maxWidth: '480px',
-                margin: '0 auto',
-                padding: '0 12px'
-              }}
-            >
-              <GlobalSearch />
-            </div>
-
-            {/* 3. RIGHT: Cart + Location + Language + Hamburger Button */}
-            <div
-              style={{
+                width: '44px',
+                height: '44px',
+                borderRadius: '12px',
+                backgroundColor: 'var(--nb-green-bright)',
+                backgroundImage: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)',
+                border: 'var(--border-medium)',
+                boxShadow: 'var(--shadow-sm)',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '8px',
-                flexShrink: 0
+                justifyContent: 'center',
+                color: '#ffffff',
+                flexShrink: 0,
+                transition: 'transform 0.15s ease'
               }}
             >
-              {/* Mobile Search Toggle */}
-              <button
-                onClick={() => setMobileSearchOpen(true)}
-                className="hamburger-btn header-search-mobile-btn"
-                aria-label="Search"
-                title="सर्च करें / Search"
-              >
-                <Search size={18} strokeWidth={2.5} />
-              </button>
+              <Sprout size={26} strokeWidth={2.6} />
+            </div>
 
-              {/* Shopping Cart Pill (Visible when cart has items) */}
-              {cartCount > 0 && (
-                <Link
-                  to="/marketplace"
-                  className="header-cart-btn"
+            {/* Typography */}
+            <div>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
+                <span
+                  className="header-brand-title"
                   style={{
-                    textDecoration: 'none',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    padding: '7px 11px',
-                    borderRadius: '10px',
-                    backgroundColor: 'var(--nb-yellow-light)',
-                    border: 'var(--border-medium)',
-                    boxShadow: 'var(--shadow-sm)',
-                    color: 'var(--nb-black)',
+                    fontSize: '1.45rem',
                     fontWeight: '900',
-                    fontSize: '0.84rem'
+                    color: 'var(--nb-black)',
+                    lineHeight: 1,
+                    letterSpacing: '-0.5px'
                   }}
-                  title={isHindi ? 'शॉपिंग कार्ट' : 'Shopping Cart'}
                 >
-                  <ShoppingCart size={17} strokeWidth={2.5} />
-                  <span
-                    style={{
-                      backgroundColor: 'var(--nb-black)',
-                      color: 'var(--nb-yellow)',
-                      padding: '1px 6px',
-                      borderRadius: '10px',
-                      fontSize: '0.74rem',
-                      fontWeight: '900'
-                    }}
-                  >
-                    {cartCount}
-                  </span>
-                </Link>
-              )}
-
-              {/* Quick Language Switcher on Desktop */}
-              <div className="header-desktop-actions">
-                <LanguageSwitcher />
-              </div>
-
-              {/* Quick Theme Switcher on Desktop */}
-              <div className="header-desktop-actions">
-                <ThemeToggle />
-              </div>
-
-              {/* User Avatar badge (if logged in) */}
-              {isAuthenticated && (
-                <Link
-                  to="/profile"
+                  खेती
+                </span>
+                <span
                   style={{
-                    textDecoration: 'none',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    padding: '4px 10px',
-                    borderRadius: '10px',
-                    backgroundColor: 'var(--nb-canvas-alt)',
-                    border: 'var(--border-thin)',
-                    color: 'var(--nb-black)'
+                    fontSize: '0.85rem',
+                    fontWeight: '900',
+                    color: 'var(--nb-black)',
+                    letterSpacing: '0.8px',
+                    textTransform: 'uppercase',
+                    opacity: 0.85
                   }}
-                  className="user-badge-btn"
                 >
-                  <div
-                    style={{
-                      width: '26px',
-                      height: '26px',
-                      borderRadius: '6px',
-                      backgroundColor: 'var(--nb-yellow)',
-                      border: '1.5px solid #000000',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontWeight: '900',
-                      fontSize: '0.82rem'
-                    }}
-                  >
-                    {user?.name ? user.name.charAt(0).toUpperCase() : <User size={13} />}
-                  </div>
-                  <span style={{ fontWeight: '800', fontSize: '0.84rem' }} className="user-badge-name">
-                    {user?.name?.split(' ')[0]}
-                  </span>
-                </Link>
-              )}
+                  KHETII
+                </span>
+              </div>
 
-              {/* ======================================================== */}
-              {/* THE PROMINENT HAMBURGER MENU BUTTON */}
-              {/* ======================================================== */}
-              <button
-                type="button"
-                onClick={() => setDrawerOpen(true)}
-                className="hamburger-btn"
+              <div
                 style={{
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '8px',
-                  padding: '8px 14px',
-                  width: 'auto',
-                  height: '42px',
-                  borderRadius: '10px',
-                  backgroundColor: 'var(--nb-yellow)',
-                  border: 'var(--border-medium)',
-                  boxShadow: 'var(--shadow-sm)',
-                  color: '#000000',
-                  fontWeight: '900',
-                  cursor: 'pointer',
-                  transition: 'all 0.15s ease'
+                  gap: '5px',
+                  fontSize: '0.68rem',
+                  fontWeight: '800',
+                  color: 'var(--color-text-secondary)',
+                  marginTop: '2px'
                 }}
-                aria-label="Open Navigation Menu"
-                title={isHindi ? 'नेविगेशन मेन्यू खोलें' : 'Open Menu'}
+                className="header-brand-tagline"
               >
-                <Menu size={22} strokeWidth={2.8} />
-                <span style={{ fontSize: '0.9rem', fontWeight: '900' }}>
-                  {isHindi ? 'मेन्यू' : 'Menu'}
-                </span>
-              </button>
+                <span
+                  style={{
+                    width: '6px',
+                    height: '6px',
+                    borderRadius: '50%',
+                    backgroundColor: 'var(--nb-green-bright)',
+                    display: 'inline-block'
+                  }}
+                  className="pulse-dot"
+                />
+                <span>{isHindi ? 'डिजिटल किसान साथी' : 'Digital Farmer Companion'}</span>
+              </div>
             </div>
-          </>
-        )}
+          </Link>
+        </div>
+
+        {/* 2. RIGHT: Prominent Neo-Brutalist Hamburger Menu Button */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <button
+            type="button"
+            onClick={() => setDrawerOpen(true)}
+            className="hamburger-btn"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              padding: '8px 16px',
+              width: 'auto',
+              height: '44px',
+              borderRadius: '12px',
+              backgroundColor: 'var(--nb-yellow)',
+              border: 'var(--border-thick)',
+              boxShadow: 'var(--shadow-md)',
+              color: '#000000',
+              fontWeight: '900',
+              cursor: 'pointer',
+              transition: 'all 0.15s ease'
+            }}
+            aria-label="Open Navigation Menu"
+            title={isHindi ? 'नेविगेशन मेन्यू खोलें' : 'Open Menu'}
+          >
+            <Menu size={22} strokeWidth={2.8} />
+            <span style={{ fontSize: '0.94rem', fontWeight: '900' }}>
+              {isHindi ? 'मेन्यू' : 'Menu'}
+            </span>
+            {cartCount > 0 && (
+              <span
+                style={{
+                  backgroundColor: 'var(--nb-red-bright)',
+                  color: '#ffffff',
+                  borderRadius: '12px',
+                  padding: '2px 8px',
+                  fontSize: '0.74rem',
+                  fontWeight: '900',
+                  border: '1.5px solid #000000',
+                  boxShadow: '1px 1px 0px #000000',
+                  marginLeft: '2px'
+                }}
+              >
+                {cartCount}
+              </span>
+            )}
+          </button>
+        </div>
       </header>
 
       {/* ======================================================== */}
@@ -458,7 +332,7 @@ export const Header = () => {
             {/* Drawer Header */}
             <div
               style={{
-                padding: '18px 20px',
+                padding: '16px 20px',
                 borderBottom: 'var(--border-thick)',
                 backgroundColor: 'var(--nb-yellow-light)',
                 display: 'flex',
@@ -509,8 +383,13 @@ export const Header = () => {
             </div>
 
             {/* Scrollable Drawer Body */}
-            <div style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '18px', flex: 1 }}>
-              {/* 1. Account Section */}
+            <div style={{ padding: '18px', display: 'flex', flexDirection: 'column', gap: '16px', flex: 1, overflowY: 'auto' }}>
+              {/* 1. Global Search Box inside Drawer */}
+              <div style={{ width: '100%' }}>
+                <GlobalSearch />
+              </div>
+
+              {/* 2. Account Section */}
               {isAuthenticated ? (
                 <div
                   style={{
@@ -604,7 +483,65 @@ export const Header = () => {
                 </div>
               )}
 
-              {/* 2. Fast Settings: Language & Theme Controls */}
+              {/* 3. Shopping Cart Shortcut */}
+              <Link
+                to="/marketplace"
+                onClick={() => setDrawerOpen(false)}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  padding: '12px 14px',
+                  borderRadius: 'var(--radius-sm)',
+                  backgroundColor: cartCount > 0 ? 'var(--nb-yellow-light)' : 'var(--nb-white)',
+                  border: 'var(--border-medium)',
+                  boxShadow: 'var(--shadow-sm)',
+                  textDecoration: 'none',
+                  color: 'var(--nb-black)',
+                  transition: 'all 0.15s ease'
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <div
+                    style={{
+                      width: '36px',
+                      height: '36px',
+                      borderRadius: '8px',
+                      backgroundColor: 'var(--nb-yellow)',
+                      border: 'var(--border-thin)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#000000',
+                      flexShrink: 0
+                    }}
+                  >
+                    <ShoppingCart size={18} strokeWidth={2.5} />
+                  </div>
+                  <div>
+                    <div style={{ fontWeight: '900', fontSize: '0.92rem', lineHeight: 1.2 }}>
+                      {isHindi ? 'शॉपिंग कार्ट (हाट)' : 'Marketplace Cart'}
+                    </div>
+                    <div style={{ fontSize: '0.74rem', fontWeight: '700', color: 'var(--color-text-secondary)', marginTop: '2px' }}>
+                      {cartCount > 0
+                        ? (isHindi ? `${cartCount} वस्तुएं मौजूद हैं • ऑर्डर करें` : `${cartCount} items in cart • Checkout`)
+                        : (isHindi ? 'कार्ट खाली है • हाट से खरीदें' : 'Cart is empty • Browse shop')}
+                    </div>
+                  </div>
+                </div>
+                {cartCount > 0 ? (
+                  <span
+                    className="badge badge-gold"
+                    style={{ fontSize: '0.82rem', padding: '3px 9px', fontWeight: '900' }}
+                  >
+                    {cartCount}
+                  </span>
+                ) : (
+                  <ChevronRight size={16} strokeWidth={2.5} />
+                )}
+              </Link>
+
+              {/* 4. Fast Settings: Language & Theme Controls */}
               <div
                 style={{
                   display: 'flex',
